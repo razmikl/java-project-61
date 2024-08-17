@@ -153,6 +153,43 @@ public class GameEvent {
 
 
     }
+    public static void primeGame() {
+
+        byte correctAnswersCount = 0;
+        String correctAnswer = "";
+
+        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+
+        while (correctAnswersCount < 3) {
+            int randomNumber = (int) (Math.random() * 100 + 1);
+            if(App.isPrime(randomNumber) == false){
+                correctAnswer = "no";
+            }else{
+                correctAnswer = "yes";
+            }
+
+            System.out.println("Question: " + randomNumber);
+            String yourAnswer = App.yourAnswer();
+
+
+            if ((App.isPrime(randomNumber) == false) && (yourAnswer.equals("no"))) {
+                correctAnswer = "no";
+                System.out.println("Correct!");
+                correctAnswersCount++;
+            } else if ((App.isPrime(randomNumber) == true) && (yourAnswer.equals("yes"))) {
+                correctAnswer = "yes";
+                System.out.println("Correct!");
+                correctAnswersCount++;
+            } else {
+                System.out.println("'" + yourAnswer + "'" + " is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
+                System.out.println("Let's try again, " + App.userName + "!");
+                break;
+            }
+        }
+        if(correctAnswersCount == 3){
+            System.out.println("Congratulations, " + App.userName + "!");
+        }
+    }
 }
 
 

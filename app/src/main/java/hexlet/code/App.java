@@ -18,13 +18,11 @@ public class App {
         String yourAnswer = sc.nextLine();
         return yourAnswer;
     }
-
     public static int yourChoice(){
         Scanner sc = new Scanner(System.in);
         int yourChoice = sc.nextInt();
         return yourChoice;
     }
-
     public static void welcomeMassage(){
         Engine.gamesChoice();
         System.out.println("\nWelcome to the Brain Games!");
@@ -33,7 +31,6 @@ public class App {
         System.out.println("Hello, " + userName + "!");
         Engine.events();
     }
-
     public static int findGCD(int a, int b) {
         while (b != 0) {
             int temp = b;
@@ -41,6 +38,18 @@ public class App {
             a = temp;
         }
         return a;
+    }
+    public static boolean isPrime(int number) {
+        if (number <= 1) {
+            return false;
+        } else {
+            for (int i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i == 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
 

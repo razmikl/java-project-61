@@ -11,6 +11,7 @@ public class Engine{
                 "3 - Calc\n" +
                 "4 - GCD\n" +
                 "5 - Progression\n" +
+                "6 - Prime\n" +
                 "0 - Exit");
         System.out.print("Your choice: ");
         App.yourChoice = App.yourChoice();
@@ -28,6 +29,9 @@ public class Engine{
         }
         if(App.yourChoice == 5){
             GameEvent.progressionGame();
+        }
+        if(App.yourChoice == 6){
+            GameEvent.primeGame();
         }
     }
 }
