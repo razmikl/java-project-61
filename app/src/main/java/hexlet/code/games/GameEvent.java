@@ -2,6 +2,8 @@ package hexlet.code.games;
 
 import hexlet.code.App;
 
+import java.util.Arrays;
+
 public class GameEvent {
     public static void evenGame() {
 
@@ -38,7 +40,6 @@ public class GameEvent {
 
 
     }
-
     public static void calculateGame() {
         byte correctAnswersCount = 0;
 
@@ -66,8 +67,6 @@ public class GameEvent {
         }
 
     }
-
-
     public static void gcdGame() {
 
         int multiplyNumber;
@@ -103,6 +102,52 @@ public class GameEvent {
             }
         }
         if(correctAnswersCount == 3){
+            System.out.println("Congratulations, " + App.userName + "!");
+        }
+
+
+    }
+    public static void progressionGame() {
+
+        byte correctAnswersCount = 0;
+        String[] progression = new String[10];
+        String replacementNumber = "";
+
+        System.out.println("What number is missing in the progression?");
+
+        while (correctAnswersCount < 3) {
+
+            int randomNumber = ((int) (Math.random() * 10 + 1));
+            int termNumber = ((int) (Math.random() * 10 + 1 * 2));
+
+            for (int i = 0; i < progression.length; i++) {
+                randomNumber = randomNumber + termNumber;
+                progression[i] = String.valueOf(randomNumber);
+
+            }
+            for (int i = 0; i < progression.length; i++) {
+                int positionNumber = ((int) (Math.random() * 10));
+                if (positionNumber < progression.length) {
+                    replacementNumber = progression[positionNumber];
+                    progression[positionNumber] = "..";
+                    break;
+                }
+            }
+
+            System.out.println("Question: " + Arrays.toString(progression));
+            String yourAnswer = App.yourAnswer();
+
+            if (yourAnswer.equals(replacementNumber)) {
+                System.out.println("Correct!");
+                correctAnswersCount++;
+            } else {
+                System.out.println("'" + yourAnswer + "'" + " is wrong answer ;(. Correct answer was '" + replacementNumber + "'.");
+                System.out.println("Let's try again, " + App.userName + "!");
+                break;
+            }
+        }
+
+        if (correctAnswersCount == 3) {
             System.out.println("Congratulations, " + App.userName + "!");
         }
 
