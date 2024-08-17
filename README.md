@@ -6,3 +6,5 @@
 https://asciinema.org/a/9zTfH64hthtscmJx2wjik84EY - demoEvenGame
 
 https://asciinema.org/a/pOVui2iGELResQrbmUximbxbS - demoCalcGame
+
+https://asciinema.org/a/E8g177haExDiKB68j3NWZKSJE - demoGcdGame
