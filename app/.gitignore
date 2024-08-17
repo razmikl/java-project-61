@@ -46,4 +46,4 @@ bin/
 
 
 ### Asciinema ###
-.cast
+*.cast
