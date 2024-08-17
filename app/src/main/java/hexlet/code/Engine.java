@@ -9,6 +9,7 @@ public class Engine{
                 "1 - Greet\n" +
                 "2 - Even\n" +
                 "3 - Calc\n" +
+                "4 - GCD\n" +
                 "0 - Exit");
         System.out.print("Your choice: ");
         App.yourChoice = App.yourChoice();
@@ -20,6 +21,9 @@ public class Engine{
         }
         if (App.yourChoice == 3){
             GameEvent.calculateGame();
+        }
+        if(App.yourChoice == 4){
+            GameEvent.gcdGame();
         }
     }
 }
