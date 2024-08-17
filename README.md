@@ -10,3 +10,5 @@ https://asciinema.org/a/pOVui2iGELResQrbmUximbxbS - demoCalcGame
 https://asciinema.org/a/E8g177haExDiKB68j3NWZKSJE - demoGcdGame
 
 https://asciinema.org/a/qmazTniqAR3mWc6xVkoHhq39M - demoProgressionGame
+
+https://asciinema.org/a/Wl2vjOFCVl8w3dR2wB0XMWqPf - demoPrimeGame
