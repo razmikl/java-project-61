@@ -19,7 +19,10 @@ public class GameEvent {
 
             yourAnswer = App.yourAnswer();
 
-            if ((randomNumber % 2 == 0 && yourAnswer.equals("yes")) || (randomNumber % 2 > 0 && yourAnswer.equals("no"))) {
+            if ((randomNumber % 2 == 0 && yourAnswer.equals("yes"))) {
+                System.out.println("Correct!");
+                correctAnswersCount++;
+            } else if ((randomNumber % 2 > 0 && yourAnswer.equals("no"))) {
                 System.out.println("Correct!");
                 correctAnswersCount++;
             } else if (randomNumber % 2 == 0 && !(yourAnswer.equals("yes"))) {
@@ -57,8 +60,21 @@ public class GameEvent {
                 System.out.println("Correct!");
                 correctAnswersCount++;
             } else if (!(yourAnswer.equals(String.valueOf(sum)))) {
-                System.out.println("'" + yourAnswer + "' is wrong answer ;(. Correct answer was '" + sum + "'.\n" +
-                        "Let's try again, " + App.userName + "!");
+                System.out.println("'"
+                        +
+                        yourAnswer
+                        +
+                        "' is wrong answer ;(. Correct answer was '"
+                        +
+                        sum
+                        +
+                        "'.\n"
+                        +
+                        "Let's try again, "
+                        +
+                        App.userName
+                        +
+                        "!");
                 break;
             }
         }
@@ -77,31 +93,32 @@ public class GameEvent {
 
         System.out.println("Find the greatest common divisor of given numbers.");
 
-        while(correctAnswersCount < 3){
+        while (correctAnswersCount < 3) {
             multiplyNumber = ((int) (Math.random() * 10 + 1)) + 1;
             randomNumber = ((int) (Math.random() * 10 + 1)) * multiplyNumber;
             randomNumber2 = ((int) (Math.random() * 10 + 1)) * multiplyNumber;
 
-            if(randomNumber % randomNumber2 == 0){
+            if (randomNumber % randomNumber2 == 0) {
                 qcdNumber = randomNumber2;
             } else if (randomNumber2 % randomNumber == 0) {
                 qcdNumber = randomNumber;
-            }else{
+            } else {
                 qcdNumber = App.findGCD(randomNumber, randomNumber2);
             }
             System.out.println("Question: " + randomNumber + " " + randomNumber2);
             String yourAnswer = App.yourAnswer();
 
-            if(yourAnswer.equals(String.valueOf(qcdNumber))){
+            if (yourAnswer.equals(String.valueOf(qcdNumber))) {
                 System.out.println("Correct!");
                 correctAnswersCount++;
             } else {
-                System.out.println("'" + yourAnswer + "'" + " is wrong answer ;(. Correct answer was '" + qcdNumber + "'.");
+                System.out.print("'" + yourAnswer + "'" + " is wrong answer ;(. ");
+                System.out.println("Correct answer was '" + qcdNumber + "'.");
                 System.out.println("Let's try again, " + App.userName + "!");
                 break;
             }
         }
-        if(correctAnswersCount == 3){
+        if (correctAnswersCount == 3) {
             System.out.println("Congratulations, " + App.userName + "!");
         }
 
@@ -141,7 +158,8 @@ public class GameEvent {
                 System.out.println("Correct!");
                 correctAnswersCount++;
             } else {
-                System.out.println("'" + yourAnswer + "'" + " is wrong answer ;(. Correct answer was '" + replacementNumber + "'.");
+                System.out.print("'" + yourAnswer + "'" + " is wrong answer ;(. ");
+                System.out.println("Correct answer was '" + replacementNumber + "'.");
                 System.out.println("Let's try again, " + App.userName + "!");
                 break;
             }
@@ -162,9 +180,9 @@ public class GameEvent {
 
         while (correctAnswersCount < 3) {
             int randomNumber = (int) (Math.random() * 100 + 1);
-            if(App.isPrime(randomNumber) == false){
+            if (!App.isPrime(randomNumber)) {
                 correctAnswer = "no";
-            }else{
+            } else {
                 correctAnswer = "yes";
             }
 
@@ -172,21 +190,22 @@ public class GameEvent {
             String yourAnswer = App.yourAnswer();
 
 
-            if ((App.isPrime(randomNumber) == false) && (yourAnswer.equals("no"))) {
+            if (!(App.isPrime(randomNumber)) && (yourAnswer.equals("no"))) {
                 correctAnswer = "no";
                 System.out.println("Correct!");
                 correctAnswersCount++;
-            } else if ((App.isPrime(randomNumber) == true) && (yourAnswer.equals("yes"))) {
+            } else if (App.isPrime(randomNumber) && (yourAnswer.equals("yes"))) {
                 correctAnswer = "yes";
                 System.out.println("Correct!");
                 correctAnswersCount++;
             } else {
-                System.out.println("'" + yourAnswer + "'" + " is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
+                System.out.print("'" + yourAnswer + "'" + " is wrong answer ;(. ");
+                System.out.println("Correct answer was '" + correctAnswer + "'.");
                 System.out.println("Let's try again, " + App.userName + "!");
                 break;
             }
         }
-        if(correctAnswersCount == 3){
+        if (correctAnswersCount == 3) {
             System.out.println("Congratulations, " + App.userName + "!");
         }
     }
