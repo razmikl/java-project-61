@@ -10,7 +10,7 @@ public class ProgressionGame {
         Cli.greetUser();
         byte correctAnswersCount = 0;
         byte roundsCount = 3;
-        int progressionLength = (int) (Math.random() * 10 + 4);
+        int progressionLength = (int) (Math.random() * 10 + 5);
         String[] progression = new String[progressionLength];
         String replacementNumber = "";
 

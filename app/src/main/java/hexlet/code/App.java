@@ -17,9 +17,9 @@ public class App {
         String yourAnswer = sc.nextLine();
         return yourAnswer;
     }
-    public static int yourChoice() {
+    public static String yourChoice() {
         Scanner sc = new Scanner(System.in);
-        int yourChoice = sc.nextInt();
+        String yourChoice = sc.nextLine();
         return yourChoice;
     }
     public static int findGCD(int a, int b) {

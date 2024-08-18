@@ -8,13 +8,13 @@ import hexlet.code.games.ProgressionGame;
 
 public class Engine {
 
-    private static int yourChoice;
+    private static String yourChoice;
 
-    public static int getYourChoice(){
+    public static String getYourChoice(){
         return yourChoice;
     }
 
-    public static int gamesChoice() {
+    public static String gamesChoice() {
         System.out.println("Please enter the game number and press Enter.\n"
                 +
                 "1 - Greet\n"
@@ -36,13 +36,13 @@ public class Engine {
     }
     public static void events() {
         switch (getYourChoice()) {
-            case (0) -> System.out.println("Exiting the game.");
-            case (1) -> Cli.greetUser();
-            case (2) -> EvenGame.evenGame();
-            case (3) -> CalculateGame.calculateGame();
-            case (4) -> GcdGame.gcdGame();
-            case (5) -> ProgressionGame.progressionGame();
-            case (6) -> PrimeGame.primeGame();
+            case ("0") -> System.out.println("Exiting the game.");
+            case ("1") -> Cli.greetUser();
+            case ("2") -> EvenGame.evenGame();
+            case ("3") -> CalculateGame.calculateGame();
+            case ("4") -> GcdGame.gcdGame();
+            case ("5") -> ProgressionGame.progressionGame();
+            case ("6") -> PrimeGame.primeGame();
             default -> System.out.println("Invalid choice. Please, select a valid number.");
 
         }
