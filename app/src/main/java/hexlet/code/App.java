@@ -4,15 +4,10 @@ import java.util.Scanner;
 
 public class App {
 
-    public static String userName;
 
     public static void main(String[] args) {
 
         Engine.gamesChoice();
-        System.out.println("\nWelcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        userName = Cli.setName();
-        System.out.println("Hello, " + userName + "!");
         Engine.events();
 
     }

@@ -1,10 +1,12 @@
 package hexlet.code.games;
 
+import hexlet.code.Cli;
 import hexlet.code.App;
 
 public class CalculateGame {
     public static void calculateGame() {
 
+        Cli.greetUser();
         byte correctAnswersCount = 0;
         System.out.println("What is the result of the expression?");
 
@@ -22,12 +24,12 @@ public class CalculateGame {
             } else if (!(yourAnswer.equals(String.valueOf(sum)))) {
                 App.wrongAnswer(yourAnswer);
                 System.out.println("Correct answer was '" + sum + "'.\n");
-                System.out.println("Let's try again, " + App.userName + "!");
+                System.out.println("Let's try again, " + Cli.userName + "!");
                 break;
             }
         }
         if (correctAnswersCount == 3) {
-            System.out.println("Congratulations, " + App.userName + "!");
+            System.out.println("Congratulations, " + Cli.userName + "!");
         }
 
     }

@@ -30,20 +30,16 @@ public class Engine {
         return yourChoice;
     }
     public static void events() {
-        if (yourChoice == 2) {
-            EvenGame.evenGame();
-        }
-        if (yourChoice == 3) {
-            CalculateGame.calculateGame();
-        }
-        if (yourChoice == 4) {
-            GcdGame.gcdGame();
-        }
-        if (yourChoice == 5) {
-            ProgressionGame.progressionGame();
-        }
-        if (yourChoice == 6) {
-            PrimeGame.primeGame();
+        switch (yourChoice) {
+            case (0) -> System.out.println("Exiting the game.");
+            case (1) -> Cli.greetUser();
+            case (2) -> EvenGame.evenGame();
+            case (3) -> CalculateGame.calculateGame();
+            case (4) -> GcdGame.gcdGame();
+            case (5) -> ProgressionGame.progressionGame();
+            case (6) -> PrimeGame.primeGame();
+            default -> System.out.println("Invalid choice. Please, select a valid number.");
+
         }
     }
 }

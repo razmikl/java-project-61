@@ -1,10 +1,12 @@
 package hexlet.code.games;
 
 import hexlet.code.App;
+import hexlet.code.Cli;
 
 public class GcdGame {
     public static void gcdGame() {
 
+        Cli.greetUser();
         int qcdNumber;
         byte correctAnswersCount = 0;
 
@@ -31,12 +33,12 @@ public class GcdGame {
             } else {
                 App.wrongAnswer(yourAnswer);
                 System.out.println("Correct answer was '" + qcdNumber + "'.");
-                System.out.println("Let's try again, " + App.userName + "!");
+                System.out.println("Let's try again, " + Cli.userName + "!");
                 break;
             }
         }
         if (correctAnswersCount == 3) {
-            System.out.println("Congratulations, " + App.userName + "!");
+            System.out.println("Congratulations, " + Cli.userName + "!");
         }
 
 

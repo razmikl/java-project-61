@@ -1,12 +1,14 @@
 package hexlet.code.games;
 
 import hexlet.code.App;
+import hexlet.code.Cli;
 
 import java.util.Arrays;
 
 public class ProgressionGame {
     public static void progressionGame() {
 
+        Cli.greetUser();
         byte correctAnswersCount = 0;
         String[] progression = new String[10];
         String replacementNumber = "";
@@ -38,12 +40,12 @@ public class ProgressionGame {
             } else {
                 App.wrongAnswer(yourAnswer);
                 System.out.println("Correct answer was '" + replacementNumber + "'.");
-                System.out.println("Let's try again, " + App.userName + "!");
+                System.out.println("Let's try again, " + Cli.userName + "!");
                 break;
             }
         }
         if (correctAnswersCount == 3) {
-            System.out.println("Congratulations, " + App.userName + "!");
+            System.out.println("Congratulations, " + Cli.userName + "!");
         }
     }
 }
