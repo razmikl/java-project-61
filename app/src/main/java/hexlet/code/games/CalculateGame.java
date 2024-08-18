@@ -20,21 +20,9 @@ public class CalculateGame {
                 System.out.println("Correct!");
                 correctAnswersCount++;
             } else if (!(yourAnswer.equals(String.valueOf(sum)))) {
-                System.out.println("'"
-                        +
-                        yourAnswer
-                        +
-                        "' is wrong answer ;(. Correct answer was '"
-                        +
-                        sum
-                        +
-                        "'.\n"
-                        +
-                        "Let's try again, "
-                        +
-                        App.userName
-                        +
-                        "!");
+                App.wrongAnswer(yourAnswer);
+                System.out.println("Correct answer was '" + sum + "'.\n");
+                System.out.println("Let's try again, " + App.userName + "!");
                 break;
             }
         }

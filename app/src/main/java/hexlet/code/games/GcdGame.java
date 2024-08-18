@@ -29,9 +29,8 @@ public class GcdGame {
                 System.out.println("Correct!");
                 correctAnswersCount++;
             } else {
-                System.out.print("'" + yourAnswer + "'" + " is wrong answer ;(. "
-                        +
-                        "Correct answer was '" + qcdNumber + "'.");
+                App.wrongAnswer(yourAnswer);
+                System.out.println("Correct answer was '" + qcdNumber + "'.");
                 System.out.println("Let's try again, " + App.userName + "!");
                 break;
             }

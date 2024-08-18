@@ -47,6 +47,9 @@ public class App {
         }
         return "yes";
     }
+    public static void wrongAnswer(String yourAnswer) {
+        System.out.print("'" + yourAnswer + "'" + " is wrong answer ;(. ");
+    }
 
 
 }

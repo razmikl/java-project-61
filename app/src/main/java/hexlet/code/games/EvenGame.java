@@ -20,9 +20,15 @@ public class EvenGame {
             } else if ((rdmNumber % 2 > 0 && yourAns.equals("no"))) {
                 System.out.println("Correct!");
                 correctAnswersCount++;
-            } else if ((rdmNumber % 2 == 0 && yourAns.equals("no")) || (rdmNumber % 2 > 0 && yourAns.equals("yes"))) {
-                System.out.println("'" + yourAns + "' is wrong answer ;(. Correct answer was 'yes'."
-                        + "Let's try again, " + App.userName + "!");
+            } else if ((rdmNumber % 2 == 0 && yourAns.equals("no"))) {
+                App.wrongAnswer(yourAns);
+                System.out.println("Correct answer was 'yes'.");
+                System.out.println("Let's try again, " + App.userName + "!");
+                break;
+            } else if (rdmNumber % 2 > 0 && yourAns.equals("yes")) {
+                App.wrongAnswer(yourAns);
+                System.out.println("Correct answer was 'no'.");
+                System.out.println("Let's try again, " + App.userName + "!");
                 break;
             }
         }

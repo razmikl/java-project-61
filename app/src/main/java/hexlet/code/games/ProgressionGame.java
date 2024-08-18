@@ -36,10 +36,8 @@ public class ProgressionGame {
                 System.out.println("Correct!");
                 correctAnswersCount++;
             } else {
-                System.out.print("'" + yourAnswer + "'" + " is wrong answer ;(. "
-                        +
-                        "Correct answer was '" + replacementNumber + "'.");
-
+                App.wrongAnswer(yourAnswer);
+                System.out.println("Correct answer was '" + replacementNumber + "'.");
                 System.out.println("Let's try again, " + App.userName + "!");
                 break;
             }

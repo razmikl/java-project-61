@@ -18,9 +18,8 @@ public class PrimeGame {
                 System.out.println("Correct!");
                 correctAnswersCount++;
             } else {
-                System.out.print("'" + yourAnswer + "'" + " is wrong answer ;(. "
-                        +
-                        "Correct answer was '" + App.isPrime(randomNumber) + "'.");
+                App.wrongAnswer(yourAnswer);
+                System.out.println("Correct answer was '" + App.isPrime(randomNumber) + "'.");
                 System.out.println("Let's try again, " + App.userName + "!");
                 break;
             }
