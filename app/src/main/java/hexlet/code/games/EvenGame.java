@@ -8,12 +8,13 @@ public class EvenGame {
 
         Cli.greetUser();
         byte correctAnswersCount = 0;
+        final int multiplyOnHundred = 100;
         final byte roundsCount = 3;
 
         while (correctAnswersCount < roundsCount) {
             System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
-            int rdmNumber = (int) (Math.random() * 100 + 1);
+            int rdmNumber = (int) (Math.random() * multiplyOnHundred + 1);
             System.out.print("Question: " + rdmNumber);
             String yourAns = App.yourAnswer();
 

@@ -8,12 +8,13 @@ public class CalculateGame {
 
         Cli.greetUser();
         byte correctAnswersCount = 0;
+        final int multiplyOnHundred = 100;
         final byte roundsCount = 3;
         System.out.println("What is the result of the expression?");
 
         while (correctAnswersCount < roundsCount) {
-            int num1 = (int) (Math.random() * 100 + 1);
-            int num2 = (int) (Math.random() * 100 + 1);
+            int num1 = (int) (Math.random() * multiplyOnHundred + 1);
+            int num2 = (int) (Math.random() * multiplyOnHundred + 1);
             int sum = num1 + num2;
 
             System.out.print("Question: " + num1 + " + " + num2);

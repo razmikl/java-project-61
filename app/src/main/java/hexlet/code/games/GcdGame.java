@@ -9,14 +9,15 @@ public class GcdGame {
         Cli.greetUser();
         int gcdNumber;
         byte correctAnswersCount = 0;
+        final int multiplyOnTen = 10;
         final byte roundsCount = 3;
 
         System.out.println("Find the greatest common divisor of given numbers.");
 
         while (correctAnswersCount < roundsCount) {
-            int multiplyNumber = ((int) (Math.random() * 10 + 1)) + 1;
-            int randomNumber = ((int) (Math.random() * 10 + 1)) * multiplyNumber;
-            int randomNumber2 = ((int) (Math.random() * 10 + 1)) * multiplyNumber;
+            int multiplyNumber = ((int) (Math.random() * multiplyOnTen + 1)) + 1;
+            int randomNumber = ((int) (Math.random() * multiplyOnTen + 1)) * multiplyNumber;
+            int randomNumber2 = ((int) (Math.random() * multiplyOnTen + 1)) * multiplyNumber;
 
             if (randomNumber % randomNumber2 == 0) {
                 gcdNumber = randomNumber2;

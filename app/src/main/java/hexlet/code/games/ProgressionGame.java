@@ -10,6 +10,8 @@ public class ProgressionGame {
         Cli.greetUser();
         byte correctAnswersCount = 0;
         final byte roundsCount = 3;
+        final int multiplerOnTen = 10;
+        final int multiplerOnTwo = 2;
         final int progressionLength = (int) (Math.random() * 10 + 5);
         final String[] progression = new String[progressionLength];
 
@@ -17,15 +19,15 @@ public class ProgressionGame {
 
         while (correctAnswersCount < roundsCount) {
             String replacementNumber = "";
-            int randomNumber = ((int) (Math.random() * 10 + 1));
-            int termNumber = ((int) (Math.random() * 10 + 1 * 2));
+            int randomNumber = ((int) (Math.random() * multiplerOnTen + 1));
+            int termNumber = ((int) (Math.random() * multiplerOnTen + 1 * multiplerOnTwo));
 
             for (int i = 0; i < progression.length; i++) {
                 randomNumber = randomNumber + termNumber;
                 progression[i] = String.valueOf(randomNumber);
             }
             for (int i = 0; i < progression.length; i++) {
-                int positionNumber = ((int) (Math.random() * 10));
+                int positionNumber = ((int) (Math.random() * multiplerOnTen));
                 if (positionNumber < progression.length) {
                     replacementNumber = progression[positionNumber];
                     progression[positionNumber] = "..";

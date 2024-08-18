@@ -9,10 +9,11 @@ public class PrimeGame {
         Cli.greetUser();
         byte correctAnswersCount = 0;
         final byte roundsCount = 3;
+        final int multiplyOnHundred = 100;
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
         while (correctAnswersCount < roundsCount) {
-            int randomNumber = (int) (Math.random() * 100 + 1);
+            int randomNumber = (int) (Math.random() * multiplyOnHundred + 1);
 
             System.out.print("Question: " + randomNumber);
             String yourAnswer = App.yourAnswer();
