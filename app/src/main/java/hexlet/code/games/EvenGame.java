@@ -6,6 +6,7 @@ import hexlet.code.Cli;
 public class EvenGame {
     public static void evenGame() {
 
+        Cli.greetUser();
         byte correctAnswersCount = 0;
         final byte roundsCount = 3;
 
