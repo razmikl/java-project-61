@@ -9,12 +9,14 @@ public class ProgressionGame {
 
         Cli.greetUser();
         byte correctAnswersCount = 0;
-        String[] progression = new String[10];
+        byte roundsCount = 3;
+        int progressionLength = (int) (Math.random() * 10 + 4);
+        String[] progression = new String[progressionLength];
         String replacementNumber = "";
 
         System.out.println("What number is missing in the progression?");
 
-        while (correctAnswersCount < 3) {
+        while (correctAnswersCount < roundsCount) {
             int randomNumber = ((int) (Math.random() * 10 + 1));
             int termNumber = ((int) (Math.random() * 10 + 1 * 2));
 
@@ -42,12 +44,12 @@ public class ProgressionGame {
             } else {
                 App.wrongAnswer(yourAnswer);
                 System.out.println("Correct answer was '" + replacementNumber + "'.");
-                System.out.println("Let's try again, " + Cli.userName + "!");
+                System.out.println("Let's try again, " + Cli.getUserName() + "!");
                 break;
             }
         }
-        if (correctAnswersCount == 3) {
-            System.out.println("Congratulations, " + Cli.userName + "!");
+        if (correctAnswersCount == roundsCount) {
+            System.out.println("Congratulations, " + Cli.getUserName() + "!");
         }
     }
 }

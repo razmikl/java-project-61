@@ -8,7 +8,12 @@ import hexlet.code.games.ProgressionGame;
 
 public class Engine {
 
-    public static int yourChoice;
+    private static int yourChoice;
+
+    public static int getYourChoice(){
+        return yourChoice;
+    }
+
     public static int gamesChoice() {
         System.out.println("Please enter the game number and press Enter.\n"
                 +
@@ -30,7 +35,7 @@ public class Engine {
         return yourChoice;
     }
     public static void events() {
-        switch (yourChoice) {
+        switch (getYourChoice()) {
             case (0) -> System.out.println("Exiting the game.");
             case (1) -> Cli.greetUser();
             case (2) -> EvenGame.evenGame();

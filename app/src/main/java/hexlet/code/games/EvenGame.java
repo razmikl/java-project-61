@@ -7,9 +7,10 @@ public class EvenGame {
     public static void evenGame() {
 
         Cli.greetUser();
+        byte roundsCount = 3;
         byte correctAnswersCount = 0;
 
-        while (correctAnswersCount < 3) {
+        while (correctAnswersCount < roundsCount) {
             System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
             int rdmNumber = (int) (Math.random() * 100 + 1);
@@ -22,20 +23,24 @@ public class EvenGame {
             } else if ((rdmNumber % 2 > 0 && yourAns.equals("no"))) {
                 System.out.println("Correct!");
                 correctAnswersCount++;
-            } else if ((rdmNumber % 2 == 0 && !(yourAns.equals("yes")))) {
-                App.wrongAnswer(yourAns);
-                System.out.println("Correct answer was 'yes'.");
-                System.out.println("Let's try again, " + Cli.userName + "!");
-                break;
-            } else if (rdmNumber % 2 > 0 && !(yourAns.equals("no"))) {
-                App.wrongAnswer(yourAns);
-                System.out.println("Correct answer was 'no'.");
-                System.out.println("Let's try again, " + Cli.userName + "!");
-                break;
+            } else {
+                if ((rdmNumber % 2 == 0 && !(yourAns.equals("yes")))) {
+                    App.wrongAnswer(yourAns);
+                    System.out.println("Correct answer was 'yes'.");
+                    System.out.println("Let's try again, " + Cli.getUserName() + "!");
+                    break;
+                } else {
+                    if (rdmNumber % 2 > 0 && !(yourAns.equals("no"))) {
+                        App.wrongAnswer(yourAns);
+                        System.out.println("Correct answer was 'no'.");
+                        System.out.println("Let's try again, " + Cli.getUserName() + "!");
+                        break;
+                    }
+                }
             }
-        }
-        if (correctAnswersCount == 3) {
-            System.out.println("Congratulations, " + Cli.userName + "!");
+            if (correctAnswersCount == roundsCount) {
+                System.out.println("Congratulations, " + Cli.getUserName() + "!");
+            }
         }
     }
 }
