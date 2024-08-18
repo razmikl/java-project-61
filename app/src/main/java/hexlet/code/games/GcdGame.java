@@ -9,10 +9,11 @@ public class GcdGame {
         Cli.greetUser();
         int gcdNumber;
         byte correctAnswersCount = 0;
+        final byte roundsCount = 3;
 
         System.out.println("Find the greatest common divisor of given numbers.");
 
-        while (correctAnswersCount < 3) {
+        while (correctAnswersCount < roundsCount) {
             int multiplyNumber = ((int) (Math.random() * 10 + 1)) + 1;
             int randomNumber = ((int) (Math.random() * 10 + 1)) * multiplyNumber;
             int randomNumber2 = ((int) (Math.random() * 10 + 1)) * multiplyNumber;
@@ -36,7 +37,7 @@ public class GcdGame {
                 break;
             }
         }
-        if (correctAnswersCount == 3) {
+        if (correctAnswersCount == roundsCount) {
             System.out.println("Congratulations, " + Cli.getUserName() + "!");
         }
 

@@ -6,10 +6,10 @@ import hexlet.code.Cli;
 public class EvenGame {
     public static void evenGame() {
 
-        Cli.greetUser();
         byte correctAnswersCount = 0;
+        final byte roundsCount = 3;
 
-        while (correctAnswersCount < 3) {
+        while (correctAnswersCount < roundsCount) {
             System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
             int rdmNumber = (int) (Math.random() * 100 + 1);
@@ -33,7 +33,7 @@ public class EvenGame {
                     }
                 }
             }
-            if (correctAnswersCount == 3) {
+            if (correctAnswersCount == roundsCount) {
                 System.out.println("Congratulations, " + Cli.getUserName() + "!");
             }
         }
