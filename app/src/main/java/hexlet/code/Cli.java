@@ -14,7 +14,7 @@ public class Cli {
         System.out.println("Hello, " + userName + "!");
     }
 
-    public static String getUserName(){
+    public static String getUserName() {
         return userName;
     }
 

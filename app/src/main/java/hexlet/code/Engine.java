@@ -10,7 +10,7 @@ public class Engine {
 
     private static String yourChoice;
 
-    public static String getYourChoice(){
+    public static String getYourChoice() {
         return yourChoice;
     }
 

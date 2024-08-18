@@ -17,10 +17,7 @@ public class EvenGame {
             System.out.print("Question: " + rdmNumber);
             String yourAns = App.yourAnswer();
 
-            if ((rdmNumber % 2 == 0 && yourAns.equals("yes"))) {
-                System.out.println("Correct!");
-                correctAnswersCount++;
-            } else if ((rdmNumber % 2 > 0 && yourAns.equals("no"))) {
+            if ((rdmNumber % 2 == 0 && yourAns.equals("yes")) || (rdmNumber % 2 > 0 && yourAns.equals("no"))) {
                 System.out.println("Correct!");
                 correctAnswersCount++;
             } else {

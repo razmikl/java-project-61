@@ -45,7 +45,7 @@ public class App {
     public static void wrongAnswer(String yourAnswer) {
         System.out.print("'" + yourAnswer + "'" + " is wrong answer ;(. ");
     }
-    public static void correctAnswers(String correctAnswer){
+    public static void correctAnswers(String correctAnswer) {
         System.out.println("Correct answer was '" + correctAnswer + "'.");
         System.out.println("Let's try again, " + Cli.getUserName() + "!");
     }
