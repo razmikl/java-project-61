@@ -7,11 +7,10 @@ public class CalculateGame {
     public static void calculateGame() {
 
         Cli.greetUser();
-        byte roundsCount = 3;
         byte correctAnswersCount = 0;
         System.out.println("What is the result of the expression?");
 
-        while (correctAnswersCount < roundsCount) {
+        while (correctAnswersCount < 3) {
             int num1 = (int) (Math.random() * 100 + 1);
             int num2 = (int) (Math.random() * 100 + 1);
             int sum = num1 + num2;
@@ -28,7 +27,7 @@ public class CalculateGame {
                 break;
             }
         }
-        if (correctAnswersCount == roundsCount) {
+        if (correctAnswersCount == 3) {
             System.out.println("Congratulations, " + Cli.getUserName() + "!");
         }
 

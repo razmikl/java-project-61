@@ -7,11 +7,10 @@ public class PrimeGame {
     public static void primeGame() {
 
         Cli.greetUser();
-        byte roundsCount = 3;
         byte correctAnswersCount = 0;
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
-        while (correctAnswersCount < roundsCount) {
+        while (correctAnswersCount < 3) {
             int randomNumber = (int) (Math.random() * 100 + 1);
 
             System.out.print("Question: " + randomNumber);
@@ -26,7 +25,7 @@ public class PrimeGame {
                 break;
             }
         }
-        if (correctAnswersCount == roundsCount) {
+        if (correctAnswersCount == 3) {
             System.out.println("Congratulations, " + Cli.getUserName() + "!");
         }
     }

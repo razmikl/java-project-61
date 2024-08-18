@@ -14,8 +14,7 @@ public class ProgressionGame {
 
         System.out.println("What number is missing in the progression?");
 
-        byte roundsCount = 3;
-        while (correctAnswersCount < roundsCount) {
+        while (correctAnswersCount < 3) {
             String replacementNumber = "";
             int randomNumber = ((int) (Math.random() * 10 + 1));
             int termNumber = ((int) (Math.random() * 10 + 1 * 2));
@@ -47,7 +46,7 @@ public class ProgressionGame {
                 break;
             }
         }
-        if (correctAnswersCount == roundsCount) {
+        if (correctAnswersCount == 3) {
             System.out.println("Congratulations, " + Cli.getUserName() + "!");
         }
     }
