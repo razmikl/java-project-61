@@ -8,7 +8,6 @@ public class App {
     public static void main(String[] args) {
 
         Engine.gamesChoice();
-        Cli.greetUser();
         Engine.events();
 
     }
