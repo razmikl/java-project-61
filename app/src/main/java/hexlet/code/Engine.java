@@ -1,6 +1,10 @@
 package hexlet.code;
 
-import hexlet.code.games.GameEvent;
+import hexlet.code.games.CalculateGame;
+import hexlet.code.games.EvenGame;
+import hexlet.code.games.GcdGame;
+import hexlet.code.games.PrimeGame;
+import hexlet.code.games.ProgressionGame;
 
 public class Engine {
 
@@ -27,19 +31,19 @@ public class Engine {
     }
     public static void events() {
         if (yourChoice == 2) {
-            GameEvent.evenGame();
+            EvenGame.evenGame();
         }
         if (yourChoice == 3) {
-            GameEvent.calculateGame();
+            CalculateGame.calculateGame();
         }
         if (yourChoice == 4) {
-            GameEvent.gcdGame();
+            GcdGame.gcdGame();
         }
         if (yourChoice == 5) {
-            GameEvent.progressionGame();
+            ProgressionGame.progressionGame();
         }
         if (yourChoice == 6) {
-            GameEvent.primeGame();
+            PrimeGame.primeGame();
         }
     }
 }
