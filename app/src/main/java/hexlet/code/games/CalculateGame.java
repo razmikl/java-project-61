@@ -4,8 +4,8 @@ import hexlet.code.App;
 
 public class CalculateGame {
     public static void calculateGame() {
-        byte correctAnswersCount = 0;
 
+        byte correctAnswersCount = 0;
         System.out.println("What is the result of the expression?");
 
         while (correctAnswersCount < 3) {

@@ -5,18 +5,15 @@ import hexlet.code.App;
 public class GcdGame {
     public static void gcdGame() {
 
-        int multiplyNumber;
         int qcdNumber;
-        int randomNumber;
-        int randomNumber2;
         byte correctAnswersCount = 0;
 
         System.out.println("Find the greatest common divisor of given numbers.");
 
         while (correctAnswersCount < 3) {
-            multiplyNumber = ((int) (Math.random() * 10 + 1)) + 1;
-            randomNumber = ((int) (Math.random() * 10 + 1)) * multiplyNumber;
-            randomNumber2 = ((int) (Math.random() * 10 + 1)) * multiplyNumber;
+            int multiplyNumber = ((int) (Math.random() * 10 + 1)) + 1;
+            int randomNumber = ((int) (Math.random() * 10 + 1)) * multiplyNumber;
+            int randomNumber2 = ((int) (Math.random() * 10 + 1)) * multiplyNumber;
 
             if (randomNumber % randomNumber2 == 0) {
                 qcdNumber = randomNumber2;
@@ -32,8 +29,9 @@ public class GcdGame {
                 System.out.println("Correct!");
                 correctAnswersCount++;
             } else {
-                System.out.print("'" + yourAnswer + "'" + " is wrong answer ;(. ");
-                System.out.println("Correct answer was '" + qcdNumber + "'.");
+                System.out.print("'" + yourAnswer + "'" + " is wrong answer ;(. "
+                        +
+                        "Correct answer was '" + qcdNumber + "'.");
                 System.out.println("Let's try again, " + App.userName + "!");
                 break;
             }

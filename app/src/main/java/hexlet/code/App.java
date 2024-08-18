@@ -35,17 +35,17 @@ public class App {
         }
         return a;
     }
-    public static boolean isPrime(int number) {
+    public static String isPrime(int number) {
         if (number <= 1) {
-            return false;
+            return "no";
         } else {
             for (int i = 2; i <= Math.sqrt(number); i++) {
                 if (number % i == 0) {
-                    return false;
+                    return "no";
                 }
             }
         }
-        return true;
+        return "yes";
     }
 
 
