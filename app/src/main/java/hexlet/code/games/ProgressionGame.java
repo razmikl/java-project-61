@@ -43,8 +43,7 @@ public class ProgressionGame {
                 correctAnswersCount++;
             } else {
                 App.wrongAnswer(yourAnswer);
-                System.out.println("Correct answer was '" + replacementNumber + "'.");
-                System.out.println("Let's try again, " + Cli.getUserName() + "!");
+                App.correctAnswers(replacementNumber);
                 break;
             }
         }

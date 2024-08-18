@@ -24,8 +24,7 @@ public class CalculateGame {
                 correctAnswersCount++;
             } else if (!(yourAnswer.equals(String.valueOf(sum)))) {
                 App.wrongAnswer(yourAnswer);
-                System.out.println("Correct answer was '" + sum + "'.\n");
-                System.out.println("Let's try again, " + Cli.getUserName() + "!");
+                App.correctAnswers(String.valueOf(sum));
                 break;
             }
         }

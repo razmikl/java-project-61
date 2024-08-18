@@ -8,7 +8,7 @@ public class GcdGame {
 
         Cli.greetUser();
         byte roundsCount = 3;
-        int qcdNumber;
+        int gcdNumber;
         byte correctAnswersCount = 0;
 
         System.out.println("Find the greatest common divisor of given numbers.");
@@ -19,22 +19,21 @@ public class GcdGame {
             int randomNumber2 = ((int) (Math.random() * 10 + 1)) * multiplyNumber;
 
             if (randomNumber % randomNumber2 == 0) {
-                qcdNumber = randomNumber2;
+                gcdNumber = randomNumber2;
             } else if (randomNumber2 % randomNumber == 0) {
-                qcdNumber = randomNumber;
+                gcdNumber = randomNumber;
             } else {
-                qcdNumber = App.findGCD(randomNumber, randomNumber2);
+                gcdNumber = App.findGCD(randomNumber, randomNumber2);
             }
             System.out.print("Question: " + randomNumber + " " + randomNumber2);
             String yourAnswer = App.yourAnswer();
 
-            if (yourAnswer.equals(String.valueOf(qcdNumber))) {
+            if (yourAnswer.equals(String.valueOf(gcdNumber))) {
                 System.out.println("Correct!");
                 correctAnswersCount++;
             } else {
                 App.wrongAnswer(yourAnswer);
-                System.out.println("Correct answer was '" + qcdNumber + "'.");
-                System.out.println("Let's try again, " + Cli.getUserName() + "!");
+                App.correctAnswers(String.valueOf(gcdNumber));
                 break;
             }
         }
