@@ -24,7 +24,7 @@ public class GcdGame {
             } else {
                 qcdNumber = App.findGCD(randomNumber, randomNumber2);
             }
-            System.out.println("Question: " + randomNumber + " " + randomNumber2);
+            System.out.print("Question: " + randomNumber + " " + randomNumber2);
             String yourAnswer = App.yourAnswer();
 
             if (yourAnswer.equals(String.valueOf(qcdNumber))) {

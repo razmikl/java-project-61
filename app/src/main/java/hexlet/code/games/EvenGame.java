@@ -13,7 +13,7 @@ public class EvenGame {
             System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
             int rdmNumber = (int) (Math.random() * 100 + 1);
-            System.out.println("Question: " + rdmNumber);
+            System.out.print("Question: " + rdmNumber);
             String yourAns = App.yourAnswer();
 
             if ((rdmNumber % 2 == 0 && yourAns.equals("yes"))) {

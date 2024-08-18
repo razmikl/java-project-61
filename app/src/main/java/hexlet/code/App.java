@@ -13,7 +13,7 @@ public class App {
     }
     public static String yourAnswer() {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Your answer: ");
+        System.out.print("\nYour answer: ");
         String yourAnswer = sc.nextLine();
         return yourAnswer;
     }

@@ -15,7 +15,7 @@ public class CalculateGame {
             int num2 = (int) (Math.random() * 100 + 1);
             int sum = num1 + num2;
 
-            System.out.println("Question: " + num1 + " + " + num2);
+            System.out.print("Question: " + num1 + " + " + num2);
             String yourAnswer = App.yourAnswer();
 
             if (yourAnswer.equals(String.valueOf(sum))) {

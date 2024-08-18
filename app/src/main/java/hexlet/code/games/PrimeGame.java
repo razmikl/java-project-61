@@ -13,7 +13,7 @@ public class PrimeGame {
         while (correctAnswersCount < 3) {
             int randomNumber = (int) (Math.random() * 100 + 1);
 
-            System.out.println("Question: " + randomNumber);
+            System.out.print("Question: " + randomNumber);
             String yourAnswer = App.yourAnswer();
 
             if (App.isPrime(randomNumber).equals(yourAnswer)) {

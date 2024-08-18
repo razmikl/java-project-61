@@ -3,7 +3,6 @@ package hexlet.code.games;
 import hexlet.code.App;
 import hexlet.code.Cli;
 
-import java.util.Arrays;
 
 public class ProgressionGame {
     public static void progressionGame() {
@@ -31,7 +30,10 @@ public class ProgressionGame {
                     break;
                 }
             }
-            System.out.println("Question: " + Arrays.toString(progression));
+            System.out.print("Question: ");
+            for (int i = 0; i < progression.length; i++) {
+                System.out.print(progression[i] + " ");
+            }
             String yourAnswer = App.yourAnswer();
 
             if (yourAnswer.equals(replacementNumber)) {
