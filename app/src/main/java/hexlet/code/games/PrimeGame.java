@@ -22,8 +22,7 @@ public class PrimeGame {
                 correctAnswersCount++;
             } else {
                 App.wrongAnswer(yourAnswer);
-                System.out.println("Correct answer was '" + App.isPrime(randomNumber) + "'.");
-                System.out.println("Let's try again, " + Cli.getUserName() + "!");
+                App.correctAnswers(App.isPrime(randomNumber));
                 break;
             }
         }

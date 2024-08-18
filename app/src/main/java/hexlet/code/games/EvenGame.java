@@ -23,14 +23,13 @@ public class EvenGame {
             } else {
                 if ((rdmNumber % 2 == 0 && !(yourAns.equals("yes")))) {
                     App.wrongAnswer(yourAns);
-                    System.out.println("Correct answer was 'yes'.");
-                    System.out.println("Let's try again, " + Cli.getUserName() + "!");
+                    App.correctAnswers("yes");
+
                     break;
                 } else {
                     if (rdmNumber % 2 > 0 && !(yourAns.equals("no"))) {
                         App.wrongAnswer(yourAns);
-                        System.out.println("Correct answer was 'no'.");
-                        System.out.println("Let's try again, " + Cli.getUserName() + "!");
+                        App.correctAnswers("no");
                         break;
                     }
                 }
