@@ -20,10 +20,10 @@ public class CalculateGame {
             System.out.print("Question: " + num1 + " + " + num2);
             String yourAnswer = Engine.yourAnswer();
 
-            if (yourAnswer.equals(String.valueOf(sum))) {
+            if (Engine.answerEquals(String.valueOf(sum), yourAnswer)) {
                 System.out.println("Correct!");
                 correctAnswersCount++;
-            } else if (!(yourAnswer.equals(String.valueOf(sum)))) {
+            } else if ((!Engine.answerEquals(String.valueOf(sum), yourAnswer))) {
                 Engine.wrongAnswer(yourAnswer);
                 Engine.correctAnswers(String.valueOf(sum));
                 break;

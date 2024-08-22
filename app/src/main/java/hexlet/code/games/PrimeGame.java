@@ -18,7 +18,7 @@ public class PrimeGame {
             System.out.print("Question: " + randomNumber);
             String yourAnswer = Engine.yourAnswer();
 
-            if (PrimeGame.isPrime(randomNumber).equals(yourAnswer)) {
+            if (Engine.answerEquals(PrimeGame.isPrime(randomNumber), yourAnswer)) {
                 System.out.println("Correct!");
                 correctAnswersCount++;
             } else {

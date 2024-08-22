@@ -29,4 +29,7 @@ public class Engine {
         System.out.println("Correct answer was '" + correctAnswer + "'.");
         System.out.println("Let's try again, " + Cli.getUserName() + "!");
     }
+    public static boolean answerEquals(String correctAnswer, String yourAnswer) {
+        return yourAnswer.equals(correctAnswer);
+    }
 }

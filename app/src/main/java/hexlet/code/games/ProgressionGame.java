@@ -40,7 +40,7 @@ public class ProgressionGame {
             }
             String yourAnswer = Engine.yourAnswer();
 
-            if (yourAnswer.equals(replacementNumber)) {
+            if (Engine.answerEquals(replacementNumber, yourAnswer)) {
                 System.out.println("Correct!");
                 correctAnswersCount++;
             } else {
