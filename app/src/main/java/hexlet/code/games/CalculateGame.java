@@ -1,7 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Cli;
-import hexlet.code.App;
+import hexlet.code.Engine;
 
 public class CalculateGame {
     public static void calculateGame() {
@@ -18,14 +18,14 @@ public class CalculateGame {
             int sum = num1 + num2;
 
             System.out.print("Question: " + num1 + " + " + num2);
-            String yourAnswer = App.yourAnswer();
+            String yourAnswer = Engine.yourAnswer();
 
             if (yourAnswer.equals(String.valueOf(sum))) {
                 System.out.println("Correct!");
                 correctAnswersCount++;
             } else if (!(yourAnswer.equals(String.valueOf(sum)))) {
-                App.wrongAnswer(yourAnswer);
-                App.correctAnswers(String.valueOf(sum));
+                Engine.wrongAnswer(yourAnswer);
+                Engine.correctAnswers(String.valueOf(sum));
                 break;
             }
         }

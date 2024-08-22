@@ -1,7 +1,7 @@
 package hexlet.code.games;
 
-import hexlet.code.App;
 import hexlet.code.Cli;
+import hexlet.code.Engine;
 
 public class EvenGame {
     public static void evenGame() {
@@ -16,21 +16,21 @@ public class EvenGame {
 
             int rdmNumber = (int) (Math.random() * multiplyOnHundred + 1);
             System.out.print("Question: " + rdmNumber);
-            String yourAns = App.yourAnswer();
+            String yourAns = Engine.yourAnswer();
 
             if ((rdmNumber % 2 == 0 && yourAns.equals("yes")) || (rdmNumber % 2 > 0 && yourAns.equals("no"))) {
                 System.out.println("Correct!");
                 correctAnswersCount++;
             } else {
                 if ((rdmNumber % 2 == 0 && !(yourAns.equals("yes")))) {
-                    App.wrongAnswer(yourAns);
-                    App.correctAnswers("yes");
+                    Engine.wrongAnswer(yourAns);
+                    Engine.correctAnswers("yes");
 
                     break;
                 } else {
                     if (rdmNumber % 2 > 0 && !(yourAns.equals("no"))) {
-                        App.wrongAnswer(yourAns);
-                        App.correctAnswers("no");
+                        Engine.wrongAnswer(yourAns);
+                        Engine.correctAnswers("no");
                         break;
                     }
                 }

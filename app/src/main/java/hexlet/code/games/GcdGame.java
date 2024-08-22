@@ -1,7 +1,7 @@
 package hexlet.code.games;
 
-import hexlet.code.App;
 import hexlet.code.Cli;
+import hexlet.code.Engine;
 
 public class GcdGame {
     public static void gcdGame() {
@@ -24,17 +24,17 @@ public class GcdGame {
             } else if (randomNumber2 % randomNumber == 0) {
                 gcdNumber = randomNumber;
             } else {
-                gcdNumber = App.findGCD(randomNumber, randomNumber2);
+                gcdNumber = GcdGame.findGCD(randomNumber, randomNumber2);
             }
             System.out.print("Question: " + randomNumber + " " + randomNumber2);
-            String yourAnswer = App.yourAnswer();
+            String yourAnswer = Engine.yourAnswer();
 
             if (yourAnswer.equals(String.valueOf(gcdNumber))) {
                 System.out.println("Correct!");
                 correctAnswersCount++;
             } else {
-                App.wrongAnswer(yourAnswer);
-                App.correctAnswers(String.valueOf(gcdNumber));
+                Engine.wrongAnswer(yourAnswer);
+                Engine.correctAnswers(String.valueOf(gcdNumber));
                 break;
             }
         }
@@ -43,5 +43,14 @@ public class GcdGame {
         }
 
 
+    }
+
+    public static int findGCD(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
     }
 }

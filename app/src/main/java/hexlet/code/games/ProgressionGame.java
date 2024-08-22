@@ -1,7 +1,7 @@
 package hexlet.code.games;
 
-import hexlet.code.App;
 import hexlet.code.Cli;
+import hexlet.code.Engine;
 
 
 public class ProgressionGame {
@@ -38,14 +38,14 @@ public class ProgressionGame {
             for (int i = 0; i < progression.length; i++) {
                 System.out.print(progression[i] + " ");
             }
-            String yourAnswer = App.yourAnswer();
+            String yourAnswer = Engine.yourAnswer();
 
             if (yourAnswer.equals(replacementNumber)) {
                 System.out.println("Correct!");
                 correctAnswersCount++;
             } else {
-                App.wrongAnswer(yourAnswer);
-                App.correctAnswers(replacementNumber);
+                Engine.wrongAnswer(yourAnswer);
+                Engine.correctAnswers(replacementNumber);
                 break;
             }
         }

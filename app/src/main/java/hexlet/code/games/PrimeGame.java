@@ -1,7 +1,7 @@
 package hexlet.code.games;
 
-import hexlet.code.App;
 import hexlet.code.Cli;
+import hexlet.code.Engine;
 
 public class PrimeGame {
     public static void primeGame() {
@@ -16,19 +16,31 @@ public class PrimeGame {
             int randomNumber = (int) (Math.random() * multiplyOnHundred + 1);
 
             System.out.print("Question: " + randomNumber);
-            String yourAnswer = App.yourAnswer();
+            String yourAnswer = Engine.yourAnswer();
 
-            if (App.isPrime(randomNumber).equals(yourAnswer)) {
+            if (PrimeGame.isPrime(randomNumber).equals(yourAnswer)) {
                 System.out.println("Correct!");
                 correctAnswersCount++;
             } else {
-                App.wrongAnswer(yourAnswer);
-                App.correctAnswers(App.isPrime(randomNumber));
+                Engine.wrongAnswer(yourAnswer);
+                Engine.correctAnswers(PrimeGame.isPrime(randomNumber));
                 break;
             }
         }
         if (correctAnswersCount == roundsCount) {
             System.out.println("Congratulations, " + Cli.getUserName() + "!");
         }
+    }
+    public static String isPrime(int number) {
+        if (number <= 1) {
+            return "no";
+        } else {
+            for (int i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i == 0) {
+                    return "no";
+                }
+            }
+        }
+        return "yes";
     }
 }
