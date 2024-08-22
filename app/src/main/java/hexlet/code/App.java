@@ -8,8 +8,7 @@ import hexlet.code.games.ProgressionGame;
 
 
 public class App {
-
-
+    
     private static String yourChoice;
 
     public static String getYourChoice() {
