@@ -35,8 +35,8 @@ public class Engine {
     public static void wrongAnswer(String yourAnswer) {
         System.out.print("'" + yourAnswer + "'" + " is wrong answer ;(. ");
     }
-    public static void yourAnswerIsWrong(String correctAnswer) {
-        System.out.println("Correct answer was '" + correctAnswer + "'.");
+    public static void yourAnswerIsWrong(String correctQuestionsAnswer) {
+        System.out.println("Correct answer was '" + correctQuestionsAnswer + "'.");
         System.out.println("Let's try again, " + Cli.getUserName() + "!");
     }
     public static boolean answerEquals(String correctQuestionAnswer, String yourAnswer) {
@@ -104,25 +104,7 @@ public class Engine {
     public static void setRandomNumber3(int newRandomNumber3) {
         randomNumber3 = newRandomNumber3;
     }
-    public static void setReplacementNumber(String newReplacementNumber) {
-        replacementNumber = newReplacementNumber;
-    }
-    public static String getReplacementNumber() {
-        return replacementNumber;
-    }
     public static int getTermNumber() {
         return termNumber;
-    }
-    public static int getRandomNumber1() {
-        return randomNumber1;
-    }
-    public static int getRandomNumber2() {
-        return randomNumber2;
-    }
-    public static int getRandomNumber4() {
-        return randomNumber4;
-    }
-    public static int getMultiplyNumber() {
-        return multiplyNumber;
     }
 }
