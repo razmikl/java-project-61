@@ -15,7 +15,7 @@ public class EvenGame {
         System.out.print("Question: " + randomNumber);
     }
     public static String correctAnswer(int randomNumber) {
-        if(randomNumber % 2 == 0) {
+        if (randomNumber % 2 == 0) {
             return "yes";
         } else {
             return "no";

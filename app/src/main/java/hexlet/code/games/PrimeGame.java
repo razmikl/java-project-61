@@ -22,7 +22,7 @@ public class PrimeGame {
         }
         return "yes";
     }
-    public static void primeQuestion(int randomNumber){
+    public static void primeQuestion(int randomNumber) {
         System.out.print("Question: " + randomNumber);
     }
 }

@@ -19,18 +19,19 @@ public class ProgressionGame {
             System.out.print(progression[i] + " ");
         }
     }
-    public static String[] generateProgression(){
+    public static String[] generateProgression() {
+
         final int progressionLength = Engine.randomNumberOnTen() + 4;
         String[] progression = new String[progressionLength];
 
         for (int i = 0; i < progression.length; i++) {
-            Engine.randomNumber3 = Engine.randomNumber3 + Engine.termNumber;
-            progression[i] = String.valueOf(Engine.randomNumber3);
+            Engine.setRandomNumber3(Engine.getRandomNumber3() + Engine.getTermNumber());
+            progression[i] = String.valueOf(Engine.getRandomNumber3());
         }
         for (int i = 0; i < progression.length; i++) {
             int randomNumber = Engine.randomNumberOnTen();
             if (randomNumber < progression.length) {
-                Engine.replacementNumber = progression[randomNumber];
+                Engine.setReplacementNumber(progression[randomNumber]);
                 progression[randomNumber] = "..";
                 break;
             }
