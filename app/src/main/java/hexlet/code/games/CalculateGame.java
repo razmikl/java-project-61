@@ -16,6 +16,6 @@ public class CalculateGame {
         System.out.print("Question: " + num1 + " + " + num2);
     }
     public static void correctAnswer(int num1, int num2) {
-        Engine.correctAnswer = String.valueOf(num1 + num2);
+        Engine.setCorrectAnswer(String.valueOf(num1 + num2));
     }
 }

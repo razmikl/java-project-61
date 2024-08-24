@@ -22,7 +22,7 @@ public class ProgressionGame {
         for (int i = 0; i < progression.length; i++) {
             int randomNumber = Engine.randomNumberOnTen();
             if (randomNumber < progression.length) {
-                Engine.correctAnswer = progression[randomNumber];
+                Engine.setCorrectAnswer(progression[randomNumber]);
                 progression[randomNumber] = "..";
                 break;
             }

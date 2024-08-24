@@ -15,9 +15,9 @@ public class EvenGame {
     }
     public static void correctAnswer(int randomNumber) {
         if (randomNumber % 2 == 0) {
-            Engine.correctAnswer = "yes";
+            Engine.setCorrectAnswer("yes");
         } else {
-            Engine.correctAnswer = "no";
+            Engine.setCorrectAnswer("no");
         }
     }
 }

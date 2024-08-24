@@ -11,13 +11,12 @@ import java.util.Scanner;
 public class Engine {
 
     private static int randomNumber3;
-    private static String replacementNumber;
     private static int termNumber;
     private static int randomNumber1;
     private static int randomNumber2;
     private static int randomNumber4;
     private static int multiplyNumber;
-    public static String correctAnswer;
+    private static String correctAnswer;
 
 
     public static String yourAnswer() {
@@ -106,5 +105,8 @@ public class Engine {
     }
     public static int getTermNumber() {
         return termNumber;
+    }
+    public static void setCorrectAnswer(String newCorrectAnswer) {
+        correctAnswer = newCorrectAnswer;
     }
 }

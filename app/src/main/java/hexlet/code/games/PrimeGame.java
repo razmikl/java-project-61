@@ -12,17 +12,17 @@ public class PrimeGame {
     }
     public static void isPrime(int number) {
         if (number <= 1) {
-            Engine.correctAnswer = "no";
+            Engine.setCorrectAnswer("no");
             return;
         } else {
             for (int i = 2; i <= Math.sqrt(number); i++) {
                 if (number % i == 0) {
-                    Engine.correctAnswer = "no";
+                    Engine.setCorrectAnswer("no");
                     return;
                 }
             }
         }
-        Engine.correctAnswer = "yes";
+        Engine.setCorrectAnswer("yes");
     }
     public static void primeQuestion(int randomNumber) {
         System.out.print("Question: " + randomNumber);

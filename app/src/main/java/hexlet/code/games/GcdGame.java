@@ -29,7 +29,7 @@ public class GcdGame {
         } else {
             gcdNumber = GcdGame.findGCD(randomNumber, randomNumber2);
         }
-        Engine.correctAnswer = String.valueOf(gcdNumber);
+        Engine.setCorrectAnswer(String.valueOf(gcdNumber));
     }
     public static void gcdQuestion(int num1, int num2) {
         System.out.print("Question: " + num1 + " " + num2);
