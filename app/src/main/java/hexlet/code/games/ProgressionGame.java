@@ -9,7 +9,7 @@ public class ProgressionGame {
 
         Cli.greetUser();
         System.out.println("What number is missing in the progression?");
-        Engine.answersLogic(Engine.getReplacementNumber());
+        Engine.answersLogic();
     }
     public static void progressionQuestion() {
         final int progressionLength = Engine.randomNumberOnTen() + 4;
@@ -22,7 +22,7 @@ public class ProgressionGame {
         for (int i = 0; i < progression.length; i++) {
             int randomNumber = Engine.randomNumberOnTen();
             if (randomNumber < progression.length) {
-                Engine.setReplacementNumber(progression[randomNumber]);
+                Engine.correctAnswer = progression[randomNumber];
                 progression[randomNumber] = "..";
                 break;
             }
@@ -32,4 +32,5 @@ public class ProgressionGame {
             System.out.print(progression[i] + " ");
         }
     }
+
 }

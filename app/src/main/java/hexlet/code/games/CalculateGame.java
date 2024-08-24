@@ -9,13 +9,13 @@ public class CalculateGame {
 
         Cli.greetUser();
         System.out.println("What is the result of the expression?");
-        Engine.answersLogic(String.valueOf(correctAnswer(Engine.getRandomNumber1(), Engine.getRandomNumber2())));
+        Engine.answersLogic();
     }
 
     public static void calculateQuestion(int num1, int num2) {
         System.out.print("Question: " + num1 + " + " + num2);
     }
-    public static int correctAnswer(int num1, int num2) {
-        return num1 + num2;
+    public static void correctAnswer(int num1, int num2) {
+        Engine.correctAnswer = String.valueOf(num1 + num2);
     }
 }

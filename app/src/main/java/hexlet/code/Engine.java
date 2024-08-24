@@ -17,6 +17,7 @@ public class Engine {
     private static int randomNumber2;
     private static int randomNumber4;
     private static int multiplyNumber;
+    public static String correctAnswer;
 
 
     public static String yourAnswer() {
@@ -34,14 +35,14 @@ public class Engine {
     public static void wrongAnswer(String yourAnswer) {
         System.out.print("'" + yourAnswer + "'" + " is wrong answer ;(. ");
     }
-    public static void correctAnswers(String correctAnswer) {
+    public static void yourAnswerIsWrong(String correctAnswer) {
         System.out.println("Correct answer was '" + correctAnswer + "'.");
         System.out.println("Let's try again, " + Cli.getUserName() + "!");
     }
-    public static boolean answerEquals(String correctAnswer, String yourAnswer) {
-        return yourAnswer.equals(correctAnswer);
+    public static boolean answerEquals(String correctQuestionAnswer, String yourAnswer) {
+        return yourAnswer.equals(correctQuestionAnswer);
     }
-    public static void answersLogic(String correctAnswer) {
+    public static void answersLogic() {
 
         int correctAnswersCount = 0;
         final byte roundsCount = 3;
@@ -55,6 +56,13 @@ public class Engine {
             multiplyNumber = randomNumberOnTen();
             termNumber = randomNumberOnTen() * 2;
 
+            switch (App.getYourChoice()) {
+                case "2" -> EvenGame.correctAnswer(randomNumber1);
+                case "3" -> CalculateGame.correctAnswer(randomNumber1, randomNumber2);
+                case "4" -> GcdGame.getGCDNumber(randomNumber3 * multiplyNumber, randomNumber4 * multiplyNumber);
+                case "6" -> PrimeGame.isPrime(randomNumber1);
+                default -> System.out.print("");
+            }
             switch (App.getYourChoice()) {
                 case "2" -> EvenGame.evenQuestion(randomNumber1);
                 case "3" -> CalculateGame.calculateQuestion(randomNumber1, randomNumber2);
@@ -71,7 +79,7 @@ public class Engine {
                 correctAnswersCount++;
             } else if (!(Engine.answerEquals(correctAnswer, yourAnswer))) {
                 Engine.wrongAnswer(yourAnswer);
-                Engine.correctAnswers(correctAnswer);
+                Engine.yourAnswerIsWrong(correctAnswer);
                 return;
             }
 

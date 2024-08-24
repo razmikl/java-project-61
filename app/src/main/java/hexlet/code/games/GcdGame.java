@@ -8,8 +8,7 @@ public class GcdGame {
 
         Cli.greetUser();
         System.out.println("Find the greatest common divisor of given numbers.");
-        Engine.answersLogic(getGCDNumber(Engine.getRandomNumber3() * Engine.getMultiplyNumber(),
-                Engine.getRandomNumber4() * Engine.getMultiplyNumber()));
+        Engine.answersLogic();
     }
 
     public static int findGCD(int a, int b) {
@@ -20,7 +19,7 @@ public class GcdGame {
         }
         return a;
     }
-    public static String getGCDNumber(int randomNumber, int randomNumber2) {
+    public static void getGCDNumber(int randomNumber, int randomNumber2) {
         int gcdNumber;
 
         if (randomNumber % randomNumber2 == 0) {
@@ -30,7 +29,7 @@ public class GcdGame {
         } else {
             gcdNumber = GcdGame.findGCD(randomNumber, randomNumber2);
         }
-        return String.valueOf(gcdNumber);
+        Engine.correctAnswer = String.valueOf(gcdNumber);
     }
     public static void gcdQuestion(int num1, int num2) {
         System.out.print("Question: " + num1 + " " + num2);
