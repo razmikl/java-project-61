@@ -8,7 +8,7 @@ public class PrimeGame {
 
         Cli.greetUser();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        Engine.answersLogic();
+        Engine.answersLogic(isPrime(Engine.getRandomNumber1()));
     }
     public static String isPrime(int number) {
         if (number <= 1) {

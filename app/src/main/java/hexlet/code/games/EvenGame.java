@@ -9,7 +9,7 @@ public class EvenGame {
 
         Cli.greetUser();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        Engine.answersLogic();
+        Engine.answersLogic(correctAnswer(Engine.getRandomNumber1()));
     }
     public static void evenQuestion(int randomNumber) {
         System.out.print("Question: " + randomNumber);

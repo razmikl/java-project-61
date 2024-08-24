@@ -9,7 +9,7 @@ public class CalculateGame {
 
         Cli.greetUser();
         System.out.println("What is the result of the expression?");
-        Engine.answersLogic();
+        Engine.answersLogic(String.valueOf(correctAnswer(Engine.getRandomNumber1(), Engine.getRandomNumber2())));
     }
 
     public static void calculateQuestion(int num1, int num2) {

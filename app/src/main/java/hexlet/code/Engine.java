@@ -13,6 +13,11 @@ public class Engine {
     private static int randomNumber3;
     private static String replacementNumber;
     private static int termNumber;
+    private static int randomNumber1;
+    private static int randomNumber2;
+    private static int randomNumber4;
+    private static int multiplyNumber;
+
 
     public static String yourAnswer() {
         Scanner sc = new Scanner(System.in);
@@ -36,19 +41,18 @@ public class Engine {
     public static boolean answerEquals(String correctAnswer, String yourAnswer) {
         return yourAnswer.equals(correctAnswer);
     }
-    public static void answersLogic() {
+    public static void answersLogic(String correctAnswer) {
 
         int correctAnswersCount = 0;
         final byte roundsCount = 3;
-        String correctAnswer = "";
 
         while (correctAnswersCount < roundsCount) {
 
-            int randomNumber1 = randomNumberOnHundred();
-            int randomNumber2 = randomNumberOnHundred();
+            randomNumber1 = randomNumberOnHundred();
+            randomNumber2 = randomNumberOnHundred();
             randomNumber3 = randomNumberOnTen();
-            int randomNumber4 = randomNumberOnTen();
-            int multiplyNumber = randomNumberOnTen();
+            randomNumber4 = randomNumberOnTen();
+            multiplyNumber = randomNumberOnTen();
             termNumber = randomNumberOnTen() * 2;
 
             switch (App.getYourChoice()) {
@@ -57,15 +61,6 @@ public class Engine {
                 case "4" -> GcdGame.gcdQuestion(randomNumber3 * multiplyNumber, randomNumber4 * multiplyNumber);
                 case "5" -> ProgressionGame.progressionQuestion();
                 case "6" -> PrimeGame.primeQuestion(randomNumber1);
-                default -> System.out.print("");
-            }
-            switch (App.getYourChoice()) {
-                case "2" -> correctAnswer = EvenGame.correctAnswer(randomNumber1);
-                case "3" -> correctAnswer = String.valueOf(CalculateGame.correctAnswer(randomNumber1, randomNumber2));
-                case "4" -> correctAnswer = GcdGame.getGCDNumber(randomNumber3 * multiplyNumber,
-                        randomNumber4 * multiplyNumber);
-                case "5" -> correctAnswer = replacementNumber;
-                case "6" -> correctAnswer = PrimeGame.isPrime(randomNumber1);
                 default -> System.out.print("");
             }
 
@@ -80,8 +75,8 @@ public class Engine {
                 return;
             }
 
-        if (correctAnswersCount == roundsCount) {
-            System.out.println("Congratulations, " + Cli.getUserName() + "!");
+            if (correctAnswersCount == roundsCount) {
+                System.out.println("Congratulations, " + Cli.getUserName() + "!");
             }
         }
     }
@@ -92,22 +87,34 @@ public class Engine {
     }
     public static int randomNumberOnTen() {
         final int multiplyOnTen = 10;
-        int multiplyNumber = ((int) (Math.random() * multiplyOnTen + 1)) + 1;
-        return multiplyNumber;
+        int num = ((int) (Math.random() * multiplyOnTen + 1)) + 1;
+        return num;
     }
     public static int getRandomNumber3() {
-        return Engine.randomNumber3;
+        return randomNumber3;
     }
-    public static void setRandomNumber3(int randomNumber3) {
-        Engine.randomNumber3 = randomNumber3;
+    public static void setRandomNumber3(int newRandomNumber3) {
+        randomNumber3 = newRandomNumber3;
+    }
+    public static void setReplacementNumber(String newReplacementNumber) {
+        replacementNumber = newReplacementNumber;
     }
     public static String getReplacementNumber() {
-        return Engine.replacementNumber;
-    }
-    public static void setReplacementNumber(String replacementNumber) {
-        Engine.replacementNumber = replacementNumber;
+        return replacementNumber;
     }
     public static int getTermNumber() {
-        return Engine.termNumber;
+        return termNumber;
+    }
+    public static int getRandomNumber1() {
+        return randomNumber1;
+    }
+    public static int getRandomNumber2() {
+        return randomNumber2;
+    }
+    public static int getRandomNumber4() {
+        return randomNumber4;
+    }
+    public static int getMultiplyNumber() {
+        return multiplyNumber;
     }
 }
