@@ -4,32 +4,11 @@ import hexlet.code.Cli;
 import hexlet.code.Engine;
 
 public class PrimeGame {
-    public static void primeGame() {
+    public static void start() {
 
         Cli.greetUser();
-        byte correctAnswersCount = 0;
-        final byte roundsCount = 3;
-        final int multiplyOnHundred = 100;
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-
-        while (correctAnswersCount < roundsCount) {
-            int randomNumber = (int) (Math.random() * multiplyOnHundred + 1);
-
-            System.out.print("Question: " + randomNumber);
-            String yourAnswer = Engine.yourAnswer();
-
-            if (Engine.answerEquals(PrimeGame.isPrime(randomNumber), yourAnswer)) {
-                System.out.println("Correct!");
-                correctAnswersCount++;
-            } else {
-                Engine.wrongAnswer(yourAnswer);
-                Engine.correctAnswers(PrimeGame.isPrime(randomNumber));
-                break;
-            }
-        }
-        if (correctAnswersCount == roundsCount) {
-            System.out.println("Congratulations, " + Cli.getUserName() + "!");
-        }
+        Engine.answersLogic();
     }
     public static String isPrime(int number) {
         if (number <= 1) {
@@ -42,5 +21,8 @@ public class PrimeGame {
             }
         }
         return "yes";
+    }
+    public static void primeQuestion(int randomNumber){
+        System.out.print("Question: " + randomNumber);
     }
 }

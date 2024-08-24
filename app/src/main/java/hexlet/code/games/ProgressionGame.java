@@ -5,52 +5,36 @@ import hexlet.code.Engine;
 
 
 public class ProgressionGame {
-    public static void progressionGame() {
+    public static void start() {
 
         Cli.greetUser();
-        byte correctAnswersCount = 0;
-        final byte roundsCount = 3;
-        final int multiplerOnTen = 10;
-        final int multiplerOnTwo = 2;
-        final int progressionLength = (int) (Math.random() * 10 + 5);
-        final String[] progression = new String[progressionLength];
-
         System.out.println("What number is missing in the progression?");
+        Engine.answersLogic();
+    }
 
-        while (correctAnswersCount < roundsCount) {
-            String replacementNumber = "";
-            int randomNumber = ((int) (Math.random() * multiplerOnTen + 1));
-            int termNumber = ((int) (Math.random() * multiplerOnTen + 1 * multiplerOnTwo));
+    public static void progressionQuestion() {
+        System.out.print("Question: ");
+        String[] progression = generateProgression();
+        for (int i = 0; i < progression.length; i++) {
+            System.out.print(progression[i] + " ");
+        }
+    }
+    public static String[] generateProgression(){
+        final int progressionLength = Engine.randomNumberOnTen() + 4;
+        String[] progression = new String[progressionLength];
 
-            for (int i = 0; i < progression.length; i++) {
-                randomNumber = randomNumber + termNumber;
-                progression[i] = String.valueOf(randomNumber);
-            }
-            for (int i = 0; i < progression.length; i++) {
-                int positionNumber = ((int) (Math.random() * multiplerOnTen));
-                if (positionNumber < progression.length) {
-                    replacementNumber = progression[positionNumber];
-                    progression[positionNumber] = "..";
-                    break;
-                }
-            }
-            System.out.print("Question: ");
-            for (int i = 0; i < progression.length; i++) {
-                System.out.print(progression[i] + " ");
-            }
-            String yourAnswer = Engine.yourAnswer();
-
-            if (Engine.answerEquals(replacementNumber, yourAnswer)) {
-                System.out.println("Correct!");
-                correctAnswersCount++;
-            } else {
-                Engine.wrongAnswer(yourAnswer);
-                Engine.correctAnswers(replacementNumber);
+        for (int i = 0; i < progression.length; i++) {
+            Engine.randomNumber3 = Engine.randomNumber3 + Engine.termNumber;
+            progression[i] = String.valueOf(Engine.randomNumber3);
+        }
+        for (int i = 0; i < progression.length; i++) {
+            int randomNumber = Engine.randomNumberOnTen();
+            if (randomNumber < progression.length) {
+                Engine.replacementNumber = progression[randomNumber];
+                progression[randomNumber] = "..";
                 break;
             }
         }
-        if (correctAnswersCount == roundsCount) {
-            System.out.println("Congratulations, " + Cli.getUserName() + "!");
-        }
+        return progression;
     }
 }

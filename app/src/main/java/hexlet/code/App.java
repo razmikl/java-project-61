@@ -14,6 +14,13 @@ public class App {
         return yourChoice;
     }
 
+    public static void main(String[] args) {
+
+        App.gamesChoice();
+        App.games();
+
+    }
+
     public static String gamesChoice() {
         System.out.println("Please enter the game number and press Enter.\n"
                 +
@@ -34,19 +41,21 @@ public class App {
         yourChoice = Engine.yourChoice();
         return yourChoice;
     }
-    public static void start() {
+    public static void games() {
         switch (getYourChoice()) {
             case ("0") -> System.out.println("Exiting the game.");
             case ("1") -> Cli.greetUser();
-            case ("2") -> EvenGame.evenGame();
-            case ("3") -> CalculateGame.calculateGame();
-            case ("4") -> GcdGame.gcdGame();
-            case ("5") -> ProgressionGame.progressionGame();
-            case ("6") -> PrimeGame.primeGame();
+            case ("2") -> EvenGame.start();
+            case ("3") -> CalculateGame.start();
+            case ("4") -> GcdGame.start();
+            case ("5") -> ProgressionGame.start();
+            case ("6") -> PrimeGame.start();
             default -> System.out.println("Invalid choice. Please, select a valid number.");
 
         }
     }
+
+
 
 
 }

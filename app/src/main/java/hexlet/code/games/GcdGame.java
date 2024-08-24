@@ -4,45 +4,11 @@ import hexlet.code.Cli;
 import hexlet.code.Engine;
 
 public class GcdGame {
-    public static void gcdGame() {
+    public static void start() {
 
         Cli.greetUser();
-        int gcdNumber;
-        byte correctAnswersCount = 0;
-        final int multiplyOnTen = 10;
-        final byte roundsCount = 3;
-
         System.out.println("Find the greatest common divisor of given numbers.");
-
-        while (correctAnswersCount < roundsCount) {
-            int multiplyNumber = ((int) (Math.random() * multiplyOnTen + 1)) + 1;
-            int randomNumber = ((int) (Math.random() * multiplyOnTen + 1)) * multiplyNumber;
-            int randomNumber2 = ((int) (Math.random() * multiplyOnTen + 1)) * multiplyNumber;
-
-            if (randomNumber % randomNumber2 == 0) {
-                gcdNumber = randomNumber2;
-            } else if (randomNumber2 % randomNumber == 0) {
-                gcdNumber = randomNumber;
-            } else {
-                gcdNumber = GcdGame.findGCD(randomNumber, randomNumber2);
-            }
-            System.out.print("Question: " + randomNumber + " " + randomNumber2);
-            String yourAnswer = Engine.yourAnswer();
-
-            if (Engine.answerEquals(String.valueOf(gcdNumber), yourAnswer)) {
-                System.out.println("Correct!");
-                correctAnswersCount++;
-            } else {
-                Engine.wrongAnswer(yourAnswer);
-                Engine.correctAnswers(String.valueOf(gcdNumber));
-                break;
-            }
-        }
-        if (correctAnswersCount == roundsCount) {
-            System.out.println("Congratulations, " + Cli.getUserName() + "!");
-        }
-
-
+        Engine.answersLogic();
     }
 
     public static int findGCD(int a, int b) {
@@ -52,5 +18,20 @@ public class GcdGame {
             a = temp;
         }
         return a;
+    }
+    public static int getGCDNumber(int randomNumber, int randomNumber2) {
+        int gcdNumber;
+
+        if (randomNumber % randomNumber2 == 0) {
+            gcdNumber = randomNumber2;
+        } else if (randomNumber2 % randomNumber == 0) {
+            gcdNumber = randomNumber;
+        } else {
+            gcdNumber = GcdGame.findGCD(randomNumber, randomNumber2);
+        }
+        return gcdNumber;
+    }
+    public static void gcdQuestion(int num1, int num2){
+        System.out.print("Question: " + num1 + " " + num2);
     }
 }
