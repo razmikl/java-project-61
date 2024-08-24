@@ -5,7 +5,7 @@ plugins {
 }
 
 application {
-    mainClass.set("hexlet.code.Engine")
+    mainClass.set("hexlet.code.App")
 }
 
 group = "hexlet.code"
