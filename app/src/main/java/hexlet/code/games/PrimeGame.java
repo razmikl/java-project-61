@@ -1,12 +1,10 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 
 public class PrimeGame {
     public static void start() {
 
-        Cli.greetUser();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         Engine.answersLogic();
     }

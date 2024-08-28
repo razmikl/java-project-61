@@ -25,11 +25,6 @@ public class Engine {
         String yourAnswer = sc.nextLine();
         return yourAnswer;
     }
-    public static String yourChoice() {
-        Scanner sc = new Scanner(System.in);
-        String yourChoice = sc.nextLine();
-        return yourChoice;
-    }
 
     public static void wrongAnswer(String yourAnswer) {
         System.out.print("'" + yourAnswer + "'" + " is wrong answer ;(. ");
@@ -43,31 +38,39 @@ public class Engine {
     }
     public static void answersLogic() {
 
+        Cli.greetUser();
         int correctAnswersCount = 0;
-        final byte roundsCount = 3;
+        final byte ROUNDS_COUNT = 3;
 
-        while (correctAnswersCount < roundsCount) {
+        while (correctAnswersCount < ROUNDS_COUNT) {
 
-            randomNumber1 = randomNumberOnHundred();
-            randomNumber2 = randomNumberOnHundred();
-            randomNumber3 = randomNumberOnTen();
-            randomNumber4 = randomNumberOnTen();
-            multiplyNumber = randomNumberOnTen();
-            termNumber = randomNumberOnTen() * 2;
+            randomNumber1 = Util.randomNumberOnHundred();
+            randomNumber2 = Util.randomNumberOnHundred();
+            randomNumber3 = Util.randomNumberOnTen();
+            randomNumber4 = Util.randomNumberOnTen();
+            multiplyNumber = Util.randomNumberOnTen();
+            termNumber = Util.randomNumberOnTen() * 2;
 
             switch (App.getYourChoice()) {
-                case "2" -> EvenGame.correctAnswer(randomNumber1);
-                case "3" -> CalculateGame.correctAnswer(randomNumber1, randomNumber2);
-                case "4" -> GcdGame.getGCDNumber(randomNumber3 * multiplyNumber, randomNumber4 * multiplyNumber);
-                case "6" -> PrimeGame.isPrime(randomNumber1);
-                default -> System.out.print("");
-            }
-            switch (App.getYourChoice()) {
-                case "2" -> EvenGame.evenQuestion(randomNumber1);
-                case "3" -> CalculateGame.calculateQuestion(randomNumber1, randomNumber2);
-                case "4" -> GcdGame.gcdQuestion(randomNumber3 * multiplyNumber, randomNumber4 * multiplyNumber);
-                case "5" -> ProgressionGame.progressionQuestion();
-                case "6" -> PrimeGame.primeQuestion(randomNumber1);
+                case "2" -> {
+                    EvenGame.correctAnswer(randomNumber1);
+                    EvenGame.evenQuestion(randomNumber1);
+                }
+                case "3" -> {
+                    CalculateGame.correctAnswer(randomNumber1, randomNumber2);
+                    CalculateGame.calculateQuestion(randomNumber1, randomNumber2);
+                }
+                case "4" -> {
+                    GcdGame.getGCDNumber(randomNumber3 * multiplyNumber, randomNumber4 * multiplyNumber);
+                    GcdGame.gcdQuestion(randomNumber3 * multiplyNumber, randomNumber4 * multiplyNumber);
+                }
+                case "5" -> {
+                    ProgressionGame.progressionQuestion();
+                }
+                case "6" -> {
+                    PrimeGame.isPrime(randomNumber1);
+                    PrimeGame.primeQuestion(randomNumber1);
+                }
                 default -> System.out.print("");
             }
 
@@ -82,21 +85,12 @@ public class Engine {
                 return;
             }
 
-            if (correctAnswersCount == roundsCount) {
+            if (correctAnswersCount == ROUNDS_COUNT) {
                 System.out.println("Congratulations, " + Cli.getUserName() + "!");
             }
         }
     }
-    public static int randomNumberOnHundred() {
-        final int multiplyOnHundred = 100;
-        int num = (int) (Math.random() * multiplyOnHundred + 1);
-        return num;
-    }
-    public static int randomNumberOnTen() {
-        final int multiplyOnTen = 10;
-        int num = ((int) (Math.random() * multiplyOnTen + 1)) + 1;
-        return num;
-    }
+
     public static int getRandomNumber3() {
         return randomNumber3;
     }

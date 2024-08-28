@@ -1,12 +1,10 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 
 public class EvenGame {
     public static void start() {
 
-        Cli.greetUser();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Engine.answersLogic();
     }

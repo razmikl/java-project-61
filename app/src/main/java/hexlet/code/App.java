@@ -6,39 +6,32 @@ import hexlet.code.games.GcdGame;
 import hexlet.code.games.PrimeGame;
 import hexlet.code.games.ProgressionGame;
 
+import java.util.Scanner;
+
 
 public class App {
     private static String yourChoice;
 
-    public static String getYourChoice() {
-        return yourChoice;
-    }
-
     public static void main(String[] args) {
 
-        App.gamesChoice();
-        App.games();
+        gamesChoice();
+        games();
 
     }
 
     public static String gamesChoice() {
-        System.out.println("Please enter the game number and press Enter.\n"
-                +
-                "1 - Greet\n"
-                +
-                "2 - Even\n"
-                +
-                "3 - Calc\n"
-                +
-                "4 - GCD\n"
-                +
-                "5 - Progression\n"
-                +
-                "6 - Prime\n"
-                +
-                "0 - Exit");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("""
+                Please enter the game number and press Enter.
+                1 - Greet
+                2 - Even
+                3 - Calc
+                4 - GCD
+                5 - Progression
+                6 - Prime
+                0 - Exit""");
         System.out.print("Your choice: ");
-        yourChoice = Engine.yourChoice();
+        yourChoice = sc.nextLine();
         return yourChoice;
     }
     public static void games() {
@@ -53,6 +46,9 @@ public class App {
             default -> System.out.println("Invalid choice. Please, select a valid number.");
 
         }
+    }
+    public static String getYourChoice() {
+        return yourChoice;
     }
 
 

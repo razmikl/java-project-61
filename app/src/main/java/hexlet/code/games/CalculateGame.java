@@ -7,7 +7,6 @@ public class CalculateGame {
 
     public static void start() {
 
-        Cli.greetUser();
         System.out.println("What is the result of the expression?");
         Engine.answersLogic();
     }
