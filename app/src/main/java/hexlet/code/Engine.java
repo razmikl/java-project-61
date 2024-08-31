@@ -40,9 +40,9 @@ public class Engine {
 
         Cli.greetUser();
         int correctAnswersCount = 0;
-        final byte ROUNDS_COUNT = 3;
+        final byte roundsCount = 3;
 
-        while (correctAnswersCount < ROUNDS_COUNT) {
+        while (correctAnswersCount < roundsCount) {
 
             randomNumber1 = Util.randomNumberOnHundred();
             randomNumber2 = Util.randomNumberOnHundred();

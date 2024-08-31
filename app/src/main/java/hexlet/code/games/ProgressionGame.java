@@ -11,8 +11,8 @@ public class ProgressionGame {
         Engine.answersLogic();
     }
     public static void progressionQuestion() {
-        final int PROGRESSION_LENGTH = Util.randomNumberOnTen() + 4;
-        String[] progression = new String[PROGRESSION_LENGTH];
+        final int progressionLength = Util.randomNumberOnTen() + 4;
+        String[] progression = new String[progressionLength];
 
         for (int i = 0; i < progression.length; i++) {
             Engine.setRandomNumber3(Engine.getRandomNumber3() + Engine.getTermNumber());
