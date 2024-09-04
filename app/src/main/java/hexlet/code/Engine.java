@@ -41,7 +41,7 @@ public class Engine {
         Cli.greetUser();
         int correctAnswersCount = 0;
         final byte roundsCount = 3;
-        String[][] array = new String[3][3];
+        String[][] array = new String[roundsCount][roundsCount];
 
         for (int i = 0; i < array.length; i++) {
 
