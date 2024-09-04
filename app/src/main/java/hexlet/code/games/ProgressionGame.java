@@ -3,9 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Util;
 import hexlet.code.Engine;
 
-import java.util.Arrays;
-
-
 public class ProgressionGame {
     private static String progressionCorrectAnswer = "";
     public static void start() {

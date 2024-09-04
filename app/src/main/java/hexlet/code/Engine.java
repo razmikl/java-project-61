@@ -1,7 +1,10 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
+import hexlet.code.games.EvenGame;
 import hexlet.code.games.ProgressionGame;
+import hexlet.code.games.CalculateGame;
+import hexlet.code.games.GcdGame;
+import hexlet.code.games.PrimeGame;
 
 import java.util.Scanner;
 
@@ -66,7 +69,7 @@ public class Engine {
                     array[0][2] = "Find the greatest common divisor of given numbers.";
                 }
                 case "5" -> {
-                    array[i][0] = ProgressionGame.progressionQuestion(randomNumber3, termNumber);
+                    array[i][0] = "Question: " + ProgressionGame.progressionQuestion(randomNumber3, termNumber);
                     array[i][1] = ProgressionGame.getProgressionCorrectAnswer();
                     array[0][2] = "What number is missing in the progression?";
                 }
