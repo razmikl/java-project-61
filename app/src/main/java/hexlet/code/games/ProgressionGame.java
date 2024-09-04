@@ -3,33 +3,44 @@ package hexlet.code.games;
 import hexlet.code.Util;
 import hexlet.code.Engine;
 
+import java.util.Arrays;
+
 
 public class ProgressionGame {
+    private static String progressionCorrectAnswer = "";
     public static void start() {
 
-        System.out.println("What number is missing in the progression?");
         Engine.answersLogic();
     }
-    public static void progressionQuestion() {
+
+    public static String progressionQuestion(int randomNumber, int termNumber) {
+        String progressionResult = "";
+        int progressionNumber = randomNumber;
+
         final int progressionLength = Util.randomNumberOnTen() + 4;
         String[] progression = new String[progressionLength];
 
         for (int i = 0; i < progression.length; i++) {
-            Engine.setRandomNumber3(Engine.getRandomNumber3() + Engine.getTermNumber());
-            progression[i] = String.valueOf(Engine.getRandomNumber3());
+            progressionNumber += termNumber;
+            progression[i] = String.valueOf(progressionNumber);
         }
         for (int i = 0; i < progression.length; i++) {
-            int randomNumber = Util.randomNumberOnTen();
-            if (randomNumber < progression.length) {
-                Engine.setCorrectAnswer(progression[randomNumber]);
-                progression[randomNumber] = "..";
+            int randomNumber2 = Util.randomNumberOnTen();
+            if (randomNumber2 < progression.length) {
+                progressionCorrectAnswer = progression[randomNumber2];
+                progression[randomNumber2] = "..";
                 break;
             }
         }
-        System.out.print("Question: ");
         for (int i = 0; i < progression.length; i++) {
-            System.out.print(progression[i] + " ");
+            progressionResult = progressionResult + progression[i] + " ";
         }
+        return progressionResult;
     }
+
+    public static String getProgressionCorrectAnswer() {
+        return progressionCorrectAnswer;
+    }
+
 
 }

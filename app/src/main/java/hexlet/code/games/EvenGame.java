@@ -5,17 +5,16 @@ import hexlet.code.Engine;
 public class EvenGame {
     public static void start() {
 
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Engine.answersLogic();
     }
-    public static void evenQuestion(int randomNumber) {
-        System.out.print("Question: " + randomNumber);
+    public static String evenQuestion(int randomNumber) {
+        return "Question: " + randomNumber;
     }
-    public static void correctAnswer(int randomNumber) {
+    public static String correctAnswer(int randomNumber) {
         if (randomNumber % 2 == 0) {
-            Engine.setCorrectAnswer("yes");
+            return "yes";
         } else {
-            Engine.setCorrectAnswer("no");
+            return "no";
         }
     }
 }

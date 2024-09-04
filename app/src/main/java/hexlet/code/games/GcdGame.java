@@ -17,7 +17,7 @@ public class GcdGame {
         }
         return a;
     }
-    public static void getGCDNumber(int randomNumber, int randomNumber2) {
+    public static String getGCDNumber(int randomNumber, int randomNumber2) {
         int gcdNumber;
 
         if (randomNumber % randomNumber2 == 0) {
@@ -27,9 +27,9 @@ public class GcdGame {
         } else {
             gcdNumber = GcdGame.findGCD(randomNumber, randomNumber2);
         }
-        Engine.setCorrectAnswer(String.valueOf(gcdNumber));
+        return String.valueOf(gcdNumber);
     }
-    public static void gcdQuestion(int num1, int num2) {
-        System.out.print("Question: " + num1 + " " + num2);
+    public static String gcdQuestion(int num1, int num2) {
+        return "Question: " + num1 + " " + num2;
     }
 }

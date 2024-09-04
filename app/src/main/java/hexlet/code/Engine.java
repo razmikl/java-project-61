@@ -1,9 +1,6 @@
 package hexlet.code;
 
-import hexlet.code.games.CalculateGame;
-import hexlet.code.games.EvenGame;
-import hexlet.code.games.GcdGame;
-import hexlet.code.games.PrimeGame;
+import hexlet.code.games.*;
 import hexlet.code.games.ProgressionGame;
 
 import java.util.Scanner;
@@ -16,7 +13,7 @@ public class Engine {
     private static int randomNumber2;
     private static int randomNumber4;
     private static int multiplyNumber;
-    private static String correctAnswer;
+    private static String progressionCorrectAnswer;
 
 
     public static String yourAnswer() {
@@ -41,8 +38,9 @@ public class Engine {
         Cli.greetUser();
         int correctAnswersCount = 0;
         final byte roundsCount = 3;
+        String[][] array = new String[3][3];
 
-        while (correctAnswersCount < roundsCount) {
+        for (int i = 0; i < array.length; i++) {
 
             randomNumber1 = Util.randomNumberOnHundred();
             randomNumber2 = Util.randomNumberOnHundred();
@@ -53,54 +51,53 @@ public class Engine {
 
             switch (App.getYourChoice()) {
                 case "2" -> {
-                    EvenGame.correctAnswer(randomNumber1);
-                    EvenGame.evenQuestion(randomNumber1);
+                    array[i][0] = EvenGame.evenQuestion(randomNumber1);
+                    array[i][1] = EvenGame.correctAnswer(randomNumber1);
+                    array[0][2] = "Answer 'yes' if the number is even, otherwise answer 'no'.";
                 }
                 case "3" -> {
-                    CalculateGame.correctAnswer(randomNumber1, randomNumber2);
-                    CalculateGame.calculateQuestion(randomNumber1, randomNumber2);
+                    array[i][0] = CalculateGame.calculateQuestion(randomNumber1, randomNumber2);
+                    array[i][1] = CalculateGame.correctAnswer(randomNumber1, randomNumber2);
+                    array[0][2] = "What is the result of the expression?";
                 }
                 case "4" -> {
-                    GcdGame.getGCDNumber(randomNumber3 * multiplyNumber, randomNumber4 * multiplyNumber);
-                    GcdGame.gcdQuestion(randomNumber3 * multiplyNumber, randomNumber4 * multiplyNumber);
+                    array[i][0] = GcdGame.gcdQuestion(randomNumber3 * multiplyNumber, randomNumber4 * multiplyNumber);
+                    array[i][1] = GcdGame.getGCDNumber(randomNumber3 * multiplyNumber, randomNumber4 * multiplyNumber);
+                    array[0][2] = "Find the greatest common divisor of given numbers.";
                 }
                 case "5" -> {
-                    ProgressionGame.progressionQuestion();
+                    array[i][0] = ProgressionGame.progressionQuestion(randomNumber3, termNumber);
+                    array[i][1] = ProgressionGame.getProgressionCorrectAnswer();
+                    array[0][2] = "What number is missing in the progression?";
                 }
+
                 case "6" -> {
-                    PrimeGame.isPrime(randomNumber1);
-                    PrimeGame.primeQuestion(randomNumber1);
+                    array[i][0] = PrimeGame.primeQuestion(randomNumber1);
+                    array[i][1] = PrimeGame.isPrime(randomNumber1);
+                    array[0][2] = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
                 }
                 default -> System.out.print("");
             }
+        }
 
+        System.out.println(array[0][2]);
+        for (int i = 0; i < roundsCount; i++) {
+
+            System.out.print(array[i][0]);
             String yourAnswer = Engine.yourAnswer();
 
-            if (Engine.answerEquals(correctAnswer, yourAnswer)) {
+            if (Engine.answerEquals(array[i][1], yourAnswer)) {
                 System.out.println("Correct!");
                 correctAnswersCount++;
-            } else if (!(Engine.answerEquals(correctAnswer, yourAnswer))) {
+            } else if (!(Engine.answerEquals(array[i][1], yourAnswer))) {
                 Engine.wrongAnswer(yourAnswer);
-                Engine.yourAnswerIsWrong(correctAnswer);
+                Engine.yourAnswerIsWrong(array[i][1]);
                 return;
             }
 
-            if (correctAnswersCount == ROUNDS_COUNT) {
+            if (correctAnswersCount == roundsCount) {
                 System.out.println("Congratulations, " + Cli.getUserName() + "!");
             }
         }
-    }
-
-    public static int getRandomNumber3() {
-        return randomNumber3;
-    }
-    public static void setRandomNumber3(int newRandomNumber3) {
-        randomNumber3 = newRandomNumber3;
-    }
-    public static int getTermNumber() {
-        return termNumber;
-    }
-    public static void setCorrectAnswer(String newCorrectAnswer) {
-        correctAnswer = newCorrectAnswer;
     }
 }
