@@ -4,9 +4,6 @@ import java.util.Scanner;
 
 public class Engine {
 
-
-
-
     public static String yourAnswer() {
         Scanner sc = new Scanner(System.in);
         System.out.print("\nYour answer: ");

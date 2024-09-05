@@ -7,6 +7,7 @@ public class GcdGame {
     public static void start() {
 
         String[][] array = new String[3][3];
+        final byte arrayLength = 3;
 
         for (int i = 0; i < array.length; i++) {
             int randomNumber3 = Util.randomNumberOnTen();
