@@ -6,8 +6,16 @@ import hexlet.code.Engine;
 public class ProgressionGame {
     private static String progressionCorrectAnswer = "";
     public static void start() {
+        String[][] array = new String[3][3];
 
-        Engine.answersLogic();
+        for (int i = 0; i < array.length; i++) {
+            int randomNumber3 = Util.randomNumberOnTen();
+            int termNumber = Util.randomNumberOnTen() * 2;
+            array[i][0] = "Question: " + ProgressionGame.progressionQuestion(randomNumber3, termNumber);
+            array[i][1] = ProgressionGame.getProgressionCorrectAnswer();
+        }
+        array[0][2] = "What number is missing in the progression?";
+        Engine.answersLogic(array);
     }
 
     public static String progressionQuestion(int randomNumber, int termNumber) {

@@ -1,12 +1,22 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Util;
 
 public class GcdGame {
     public static void start() {
 
-        System.out.println("Find the greatest common divisor of given numbers.");
-        Engine.answersLogic();
+        String[][] array = new String[3][3];
+
+        for (int i = 0; i < array.length; i++) {
+            int randomNumber3 = Util.randomNumberOnTen();
+            int randomNumber4 = Util.randomNumberOnTen();
+            int multiplyNumber = Util.randomNumberOnTen();
+            array[i][0] = GcdGame.gcdQuestion(randomNumber3 * multiplyNumber, randomNumber4 * multiplyNumber);
+            array[i][1] = GcdGame.getGCDNumber(randomNumber3 * multiplyNumber, randomNumber4 * multiplyNumber);
+        }
+        array[0][2] = "Find the greatest common divisor of given numbers.";
+        Engine.answersLogic(array);
     }
 
     public static int findGCD(int a, int b) {

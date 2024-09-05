@@ -1,22 +1,10 @@
 package hexlet.code;
 
-import hexlet.code.games.EvenGame;
-import hexlet.code.games.ProgressionGame;
-import hexlet.code.games.CalculateGame;
-import hexlet.code.games.GcdGame;
-import hexlet.code.games.PrimeGame;
-
 import java.util.Scanner;
 
 public class Engine {
 
-    private static int randomNumber3;
-    private static int termNumber;
-    private static int randomNumber1;
-    private static int randomNumber2;
-    private static int randomNumber4;
-    private static int multiplyNumber;
-    private static String progressionCorrectAnswer;
+
 
 
     public static String yourAnswer() {
@@ -36,52 +24,11 @@ public class Engine {
     public static boolean answerEquals(String correctQuestionAnswer, String yourAnswer) {
         return yourAnswer.equals(correctQuestionAnswer);
     }
-    public static void answersLogic() {
+    public static void answersLogic(String[][] array) {
 
         Cli.greetUser();
         int correctAnswersCount = 0;
         final byte roundsCount = 3;
-        String[][] array = new String[roundsCount][roundsCount];
-
-        for (int i = 0; i < array.length; i++) {
-
-            randomNumber1 = Util.randomNumberOnHundred();
-            randomNumber2 = Util.randomNumberOnHundred();
-            randomNumber3 = Util.randomNumberOnTen();
-            randomNumber4 = Util.randomNumberOnTen();
-            multiplyNumber = Util.randomNumberOnTen();
-            termNumber = Util.randomNumberOnTen() * 2;
-
-            switch (App.getYourChoice()) {
-                case "2" -> {
-                    array[i][0] = EvenGame.evenQuestion(randomNumber1);
-                    array[i][1] = EvenGame.correctAnswer(randomNumber1);
-                    array[0][2] = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-                }
-                case "3" -> {
-                    array[i][0] = CalculateGame.calculateQuestion(randomNumber1, randomNumber2);
-                    array[i][1] = CalculateGame.correctAnswer(randomNumber1, randomNumber2);
-                    array[0][2] = "What is the result of the expression?";
-                }
-                case "4" -> {
-                    array[i][0] = GcdGame.gcdQuestion(randomNumber3 * multiplyNumber, randomNumber4 * multiplyNumber);
-                    array[i][1] = GcdGame.getGCDNumber(randomNumber3 * multiplyNumber, randomNumber4 * multiplyNumber);
-                    array[0][2] = "Find the greatest common divisor of given numbers.";
-                }
-                case "5" -> {
-                    array[i][0] = "Question: " + ProgressionGame.progressionQuestion(randomNumber3, termNumber);
-                    array[i][1] = ProgressionGame.getProgressionCorrectAnswer();
-                    array[0][2] = "What number is missing in the progression?";
-                }
-
-                case "6" -> {
-                    array[i][0] = PrimeGame.primeQuestion(randomNumber1);
-                    array[i][1] = PrimeGame.isPrime(randomNumber1);
-                    array[0][2] = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-                }
-                default -> System.out.print("");
-            }
-        }
 
         System.out.println(array[0][2]);
         for (int i = 0; i < roundsCount; i++) {
