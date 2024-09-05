@@ -7,7 +7,7 @@ public class ProgressionGame {
     private static String progressionCorrectAnswer = "";
     public static void start() {
         final byte arrayLength = 3;
-        String[][] array = new String[3][3];
+        String[][] array = new String[arrayLength][arrayLength];
 
         for (int i = 0; i < array.length; i++) {
             int randomNumber3 = Util.randomNumberOnTen();

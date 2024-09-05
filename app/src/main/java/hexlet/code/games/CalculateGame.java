@@ -7,7 +7,7 @@ public class CalculateGame {
 
     public static void start() {
         final byte arrayLength = 3;
-        String[][] array = new String[3][3];
+        String[][] array = new String[arrayLength][arrayLength];
 
         for (int i = 0; i < array.length; i++) {
             int randomNumber1 = Util.randomNumberOnHundred();
