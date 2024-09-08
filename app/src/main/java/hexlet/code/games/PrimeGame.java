@@ -17,16 +17,15 @@ public class PrimeGame {
         Engine.answersLogic(array);
     }
     public static String isPrime(int number) {
-        if (number <= 1) {
+        if (number <= 1) { // Проверка числа на положительность/отрицательность (никак не смогу убрать этот этап)
             return "no";
-        } else {
-            for (int i = 2; i <= Math.sqrt(number); i++) {
-                if (number % i == 0) {
-                    return "no";
-                }
+        }
+        for (int i = 2; i <= Math.sqrt(number); i++) { // В случае удачной проверки с выше, то идет основной цикл определения простого числа
+            if (number % i == 0) {
+                return "no";
             }
         }
-        return "yes";
+        return "yes"; // Максимум того, что смог изменить, опираясь на комментарий 1 от кодревью 5
     }
     public static String primeQuestion(int randomNumber) {
         return "Question: " + randomNumber;
