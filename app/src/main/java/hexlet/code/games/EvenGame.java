@@ -6,7 +6,6 @@ import hexlet.code.Util;
 public class EvenGame {
     public static void start() {
         String[][] array = new String[Engine.ROUNDS_LENGTH][Engine.ROUNDS_LENGTH];
-
         for (int i = 0; i < array.length; i++) {
             int randomNumber1 = Util.randomNumberOnHundred();
             array[i][0] = EvenGame.evenQuestion(randomNumber1);
