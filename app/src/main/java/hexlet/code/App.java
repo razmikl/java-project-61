@@ -9,11 +9,14 @@ import hexlet.code.games.PrimeGame;
 import java.util.Scanner;
 
 public class App {
+
     private static String yourChoice;
+
     public static void main(String[] args) {
         gamesChoice();
         games();
     }
+
     public static String gamesChoice() {
         Scanner sc = new Scanner(System.in);
         System.out.println("""
@@ -29,6 +32,7 @@ public class App {
         yourChoice = sc.nextLine();
         return yourChoice;
     }
+
     public static void games() {
         switch (getYourChoice()) {
             case ("0") -> System.out.println("Exiting the game.");
@@ -41,8 +45,10 @@ public class App {
             default -> System.out.println("Invalid choice. Please, select a valid number.");
         }
     }
+
     public static String getYourChoice() {
         return yourChoice;
     }
+
 }
 

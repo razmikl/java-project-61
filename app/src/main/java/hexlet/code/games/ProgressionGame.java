@@ -4,9 +4,12 @@ import hexlet.code.Util;
 import hexlet.code.Engine;
 
 public class ProgressionGame {
+
     private static String progressionCorrectAnswer = "";
+
     public static void start() {
         String[][] array = new String[Engine.ROUNDS_LENGTH][Engine.ROUNDS_LENGTH];
+
         for (int i = 0; i < array.length; i++) {
             int randomNumber3 = Util.randomNumberOnTen();
             int termNumber = Util.randomNumberOnTen() * 2;
@@ -16,6 +19,7 @@ public class ProgressionGame {
         array[0][2] = "What number is missing in the progression?";
         Engine.answersLogic(array);
     }
+
     public static String progressionQuestion(int randomNumber, int termNumber) {
         String progressionResult = "";
         int progressionNumber = randomNumber;
@@ -38,7 +42,9 @@ public class ProgressionGame {
         }
         return progressionResult;
     }
+
     public static String getProgressionCorrectAnswer() {
         return progressionCorrectAnswer;
     }
+
 }

@@ -6,6 +6,7 @@ import hexlet.code.Util;
 public class PrimeGame {
     public static void start() {
         String[][] array = new String[Engine.ROUNDS_LENGTH][Engine.ROUNDS_LENGTH];
+
         for (int i = 0; i < array.length; i++) {
             int randomNumber1 = Util.randomNumberOnHundred();
             array[i][0] = PrimeGame.primeQuestion(randomNumber1);
@@ -26,7 +27,9 @@ public class PrimeGame {
         }
         return "yes"; // Максимум того, что смог изменить, опираясь на комментарий 1 от кодревью 5
     }
+
     public static String primeQuestion(int randomNumber) {
         return "Question: " + randomNumber;
     }
+
 }

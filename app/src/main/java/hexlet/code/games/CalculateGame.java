@@ -6,6 +6,7 @@ import hexlet.code.Util;
 public class CalculateGame {
     public static void start() {
         String[][] array = new String[Engine.ROUNDS_LENGTH][Engine.ROUNDS_LENGTH];
+
         for (int i = 0; i < array.length; i++) {
             int randomNumber1 = Util.randomNumberOnHundred();
             int randomNumber2 = Util.randomNumberOnHundred();
@@ -15,10 +16,13 @@ public class CalculateGame {
         array[0][2] = "What is the result of the expression?";
         Engine.answersLogic(array);
     }
+
     public static String calculateQuestion(int num1, int num2) {
         return "Question: " + num1 + " + " + num2;
     }
+
     public static String correctAnswer(int num1, int num2) {
         return String.valueOf(num1 + num2);
     }
+
 }
