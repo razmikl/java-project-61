@@ -5,8 +5,7 @@ import hexlet.code.Util;
 
 public class EvenGame {
     public static void start() {
-        final byte arrayLength = 3;
-        String[][] array = new String[arrayLength][arrayLength];
+        String[][] array = new String[Engine.ROUNDS_LENGTH][Engine.ROUNDS_LENGTH];
 
         for (int i = 0; i < array.length; i++) {
             int randomNumber1 = Util.randomNumberOnHundred();

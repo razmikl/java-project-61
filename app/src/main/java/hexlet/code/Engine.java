@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class Engine {
 
+    public static final byte ROUNDS_LENGTH = 3;
+
     public static String yourAnswer() {
         Scanner sc = new Scanner(System.in);
         System.out.print("\nYour answer: ");
@@ -18,31 +20,27 @@ public class Engine {
         System.out.println("Correct answer was '" + correctQuestionsAnswer + "'.");
         System.out.println("Let's try again, " + Cli.getUserName() + "!");
     }
-    public static boolean answerEquals(String correctQuestionAnswer, String yourAnswer) {
-        return yourAnswer.equals(correctQuestionAnswer);
-    }
     public static void answersLogic(String[][] array) {
 
         Cli.greetUser();
         int correctAnswersCount = 0;
-        final byte roundsCount = 3;
 
         System.out.println(array[0][2]);
-        for (int i = 0; i < roundsCount; i++) {
+        for (int i = 0; i < ROUNDS_LENGTH; i++) {
 
             System.out.print(array[i][0]);
             String yourAnswer = Engine.yourAnswer();
 
-            if (Engine.answerEquals(array[i][1], yourAnswer)) {
+            if (array[i][1].equals(yourAnswer)) {
                 System.out.println("Correct!");
                 correctAnswersCount++;
-            } else if (!(Engine.answerEquals(array[i][1], yourAnswer))) {
+            } else  {
                 Engine.wrongAnswer(yourAnswer);
                 Engine.yourAnswerIsWrong(array[i][1]);
                 return;
             }
 
-            if (correctAnswersCount == roundsCount) {
+            if (correctAnswersCount == ROUNDS_LENGTH) {
                 System.out.println("Congratulations, " + Cli.getUserName() + "!");
             }
         }

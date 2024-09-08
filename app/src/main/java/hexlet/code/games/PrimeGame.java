@@ -5,8 +5,7 @@ import hexlet.code.Util;
 
 public class PrimeGame {
     public static void start() {
-        final byte arrayLength = 3;
-        String[][] array = new String[arrayLength][arrayLength];
+        String[][] array = new String[Engine.ROUNDS_LENGTH][Engine.ROUNDS_LENGTH];
 
         for (int i = 0; i < array.length; i++) {
             int randomNumber1 = Util.randomNumberOnHundred();
@@ -20,7 +19,8 @@ public class PrimeGame {
         if (number <= 1) { // Проверка числа на положительность/отрицательность (никак не смогу убрать этот этап)
             return "no";
         }
-        for (int i = 2; i <= Math.sqrt(number); i++) { // В случае удачной проверки с выше, то идет основной цикл определения простого числа
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            // В случае удачной проверки с выше, то идет основной цикл определения простого числа
             if (number % i == 0) {
                 return "no";
             }
