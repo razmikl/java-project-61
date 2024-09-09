@@ -24,21 +24,24 @@ public class Engine {
 
     public static void answersLogic(String[][] array) {
         Cli.greetUser();
+        byte correctAnswersCount = 0;
         System.out.println(array[0][2]);
 
-        for (int correctAnswersCount = 0; correctAnswersCount < ROUNDS_LENGTH; correctAnswersCount++) {
-            System.out.print(array[correctAnswersCount][0]);
+        for (int i = 0; i < ROUNDS_LENGTH; i++) {
+            System.out.print(array[i][0]);
             String yourAnswer = Engine.yourAnswer();
 
-            if (array[correctAnswersCount][1].equals(yourAnswer)) {
+            if (array[i][1].equals(yourAnswer)) {
                 System.out.println("Correct!");
+                correctAnswersCount++;
             } else {
                 Engine.wrongAnswer(yourAnswer);
-                Engine.yourAnswerIsWrong(array[correctAnswersCount][1]);
+                Engine.yourAnswerIsWrong(array[i][1]);
                 return;
             }
-
-            System.out.println("Congratulations, " + Cli.getUserName() + "!");
+            if (correctAnswersCount == 3) {
+                System.out.println("Congratulations, " + Cli.getUserName() + "!");
+            }
 
         }
     }
