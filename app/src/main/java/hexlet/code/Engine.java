@@ -39,7 +39,7 @@ public class Engine {
                 Engine.yourAnswerIsWrong(array[i][1]);
                 return;
             }
-            if (correctAnswersCount == 3) {
+            if (correctAnswersCount == ROUNDS_LENGTH) {
                 System.out.println("Congratulations, " + Cli.getUserName() + "!");
             }
 
