@@ -8,9 +8,9 @@ public class PrimeGame {
         String[][] array = new String[Engine.ROUNDS_LENGTH][Engine.ROUNDS_LENGTH];
 
         for (int i = 0; i < array.length; i++) {
-            int randomNumber1 = Util.randomNumberOnHundred();
-            array[i][0] = PrimeGame.primeQuestion(randomNumber1);
-            array[i][1] = PrimeGame.isPrime(randomNumber1);
+            int primeGameRandomNumber = Util.randomNumberOnHundred();
+            array[i][0] = PrimeGame.primeQuestion(primeGameRandomNumber);
+            array[i][1] = PrimeGame.isPrime(primeGameRandomNumber);
         }
         array[0][2] = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         Engine.answersLogic(array);

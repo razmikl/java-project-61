@@ -8,9 +8,9 @@ public class EvenGame {
         String[][] array = new String[Engine.ROUNDS_LENGTH][Engine.ROUNDS_LENGTH];
 
         for (int i = 0; i < array.length; i++) {
-            int randomNumber1 = Util.randomNumberOnHundred();
-            array[i][0] = EvenGame.evenQuestion(randomNumber1);
-            array[i][1] = EvenGame.correctAnswer(randomNumber1);
+            int evenGameRandomNumber = Util.randomNumberOnHundred();
+            array[i][0] = EvenGame.evenQuestion(evenGameRandomNumber);
+            array[i][1] = EvenGame.correctAnswer(evenGameRandomNumber);
         }
         array[0][2] = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         Engine.answersLogic(array);
