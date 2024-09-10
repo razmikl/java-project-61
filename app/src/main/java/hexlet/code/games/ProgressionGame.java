@@ -8,16 +8,16 @@ public class ProgressionGame {
     private static String progressionCorrectAnswer = "";
 
     public static void start() {
-        String[][] array = new String[Engine.ROUNDS_LENGTH][Engine.ROUNDS_LENGTH];
+        String[][] progressionGameArray = new String[Engine.ROUNDS_LENGTH][Engine.ROUNDS_LENGTH];
 
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 0; i < progressionGameArray.length; i++) {
             int randomNumber3 = Util.randomNumberOnTen();
             int termNumber = Util.randomNumberOnTen() * 2;
-            array[i][0] = "Question: " + ProgressionGame.progressionQuestion(randomNumber3, termNumber);
-            array[i][1] = ProgressionGame.getProgressionCorrectAnswer();
+            progressionGameArray[i][0] = "Question: " + ProgressionGame.progressionQuestion(randomNumber3, termNumber);
+            progressionGameArray[i][1] = ProgressionGame.getProgressionCorrectAnswer();
         }
-        array[0][2] = "What number is missing in the progression?";
-        Engine.answersLogic(array);
+        progressionGameArray[0][2] = "What number is missing in the progression?";
+        Engine.answersLogic(progressionGameArray);
     }
 
     public static String progressionQuestion(int randomNumber, int termNumber) {
