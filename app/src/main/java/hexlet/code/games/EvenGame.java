@@ -5,15 +5,15 @@ import hexlet.code.Util;
 
 public class EvenGame {
     public static void start() {
-        String[][] array = new String[Engine.ROUNDS_LENGTH][Engine.ROUNDS_LENGTH];
+        String[][] evenGameArray = new String[Engine.ROUNDS_LENGTH][Engine.ROUNDS_LENGTH];
 
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 0; i < evenGameArray.length; i++) {
             int evenGameRandomNumber = Util.randomNumberOnHundred();
-            array[i][0] = EvenGame.evenQuestion(evenGameRandomNumber);
-            array[i][1] = EvenGame.correctAnswer(evenGameRandomNumber);
+            evenGameArray[i][0] = EvenGame.evenQuestion(evenGameRandomNumber);
+            evenGameArray[i][1] = EvenGame.correctAnswer(evenGameRandomNumber);
         }
-        array[0][2] = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        Engine.answersLogic(array);
+        evenGameArray[0][2] = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+        Engine.answersLogic(evenGameArray);
     }
 
     public static String evenQuestion(int randomNumber) {
